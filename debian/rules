@@ -9,5 +9,5 @@ include /usr/share/cdbs/1/rules/simple-patchsys.mk
 binary-install/d-feet::
 	dh_icons -pd-feet
 	dh_desktop -pd-feet
-	rm -rf debian/d-feet/usr/share/omf/
-	rm -rf debian/d-feet/usr/lib/
+	rmdir debian/d-feet/usr/share/omf/
+	rmdir debian/d-feet/usr/lib/
