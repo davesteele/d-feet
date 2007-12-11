@@ -8,7 +8,8 @@ Build-Depends: cdbs,
                python-central (>= 0.5.6)
 Standards-Version: 3.7.3
 XS-Python-Version: >= 2.5
-Vcs-Svn: svn://svn.debian.org/svn/pkg-utopia/packages/unstable/d-feet
+Vcs-Svn: svn://svn.debian.org/svn/pkg-utopia/packages/unstable/d-feet/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-utopia/packages/unstable/d-feet/
 Homepage: http://hosted.fedoraproject.org/projects/d-feet
 XS-Dm-Upload-Allowed: yes
 
