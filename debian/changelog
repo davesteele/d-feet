@@ -1,5 +1,6 @@
 d-feet (0.1.6-1) UNRELEASED; urgency=low
 
   * Initial release. (Closes: #455365)
+  * debian/patches/01fix-icon.diff: Fix warning due to unknow icon
 
  -- Laurent Bigonville <bigon@bigon.be>  Sun, 09 Dec 2007 22:17:38 +0100
