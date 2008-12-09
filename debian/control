@@ -2,12 +2,12 @@ Source: d-feet
 Section: devel
 Priority: extra
 Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@lists.alioth.debian.org>
-Uploaders: Laurent Bigonville <bigon@bigon.be>
+Uploaders: Laurent Bigonville <bigon@debian.org>
 Build-Depends: cdbs,
                debhelper (>= 5.0.51~),
                python2.5
 Build-Depends-Indep: python-support (>= 0.5.3)
-Standards-Version: 3.7.3
+Standards-Version: 3.8.0
 XS-Python-Version: >= 2.5
 Vcs-Svn: svn://svn.debian.org/svn/pkg-utopia/packages/unstable/d-feet/
 Vcs-Browser: http://svn.debian.org/wsvn/pkg-utopia/packages/unstable/d-feet/

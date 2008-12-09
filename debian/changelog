@@ -1,11 +1,13 @@
-d-feet (0.1.8-2) UNRELEASED; urgency=low
+d-feet (0.1.8-2) unstable; urgency=low
 
   * debian/control:
     - Bump minimal version for debhelper to please lintian
     - Move python2.5 to Build-Depends to please lintian 
+    - Bump Standards-Version to 3.8.0
+    - Use my debian.org address in Uploaders
   * debian/d-feet.1: add manpage for d-feet executable
 
- -- Laurent Bigonville <bigon@bigon.be>  Sat, 24 May 2008 22:25:38 +0200
+ -- Laurent Bigonville <bigon@debian.org>  Thu, 11 Sep 2008 22:33:01 +0200
 
 d-feet (0.1.8-1) unstable; urgency=low
 
