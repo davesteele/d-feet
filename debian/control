@@ -23,7 +23,7 @@ Depends: ${shlibs:Depends},
          python-dbus (>= 0.82.3),
          python-gtk2,
          python-glade2,
-         python-gnome2-desktop
+Recommends: python-gnome2-desktop
 XB-Python-Version: ${python:Versions}
 Description: A D-Bus debugger
  d-feet is a D-Bus debugger that allow you to:
