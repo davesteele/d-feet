@@ -4,6 +4,7 @@ d-feet (0.1.8-3) unstable; urgency=low
     - Fix Homepage URL (Closes: #506559)
     - Drop python-gnome2-desktop to Recommends (Closes: #507442) 
     - Change description to something more meaningful (Closes: #470701)
+  * debian/rules: Remove rmdir rules, not needed anymore
 
  -- Laurent Bigonville <bigon@debian.org>  Mon, 16 Feb 2009 09:59:53 +0100
 
