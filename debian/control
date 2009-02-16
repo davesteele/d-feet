@@ -25,7 +25,7 @@ Depends: ${shlibs:Depends},
          python-glade2,
 Recommends: python-gnome2-desktop
 XB-Python-Version: ${python:Versions}
-Description: A D-Bus debugger
+Description: A D-Bus object browser, viewer and debugger
  d-feet is a D-Bus debugger that allow you to:
   * View names on the session and system bus
   * View exported objects, interfaces, methods and signals
