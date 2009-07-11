@@ -15,7 +15,6 @@ Homepage: http://www.fedorahosted.org/d-feet
 
 Package: d-feet
 Architecture: all
-Section: devel
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          ${python:Depends},
