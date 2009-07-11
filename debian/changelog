@@ -1,4 +1,4 @@
-d-feet (0.1.10-1) UNRELEASED; urgency=low
+d-feet (0.1.10-1) unstable; urgency=low
 
   * New upstream release.
   * debian/control:
@@ -12,7 +12,7 @@ d-feet (0.1.10-1) UNRELEASED; urgency=low
   * Use correct pysupport policy
   * Update copyright file
 
- -- Laurent Bigonville <bigon@debian.org>  Sat, 11 Jul 2009 13:39:35 +0200
+ -- Laurent Bigonville <bigon@debian.org>  Sat, 11 Jul 2009 18:32:37 +0200
 
 d-feet (0.1.8-3) unstable; urgency=low
 
