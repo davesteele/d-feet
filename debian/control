@@ -21,7 +21,7 @@ Depends: ${shlibs:Depends},
          python-dbus (>= 0.82.3),
          python-gtk2,
          python-glade2,
-Recommends: python-gnome2-desktop
+Recommends: python-wnck
 Description: A D-Bus object browser, viewer and debugger
  d-feet is a D-Bus debugger that allow you to:
   * View names on the session and system bus

@@ -5,13 +5,14 @@ d-feet (0.1.10-1) UNRELEASED; urgency=low
     - Drop XS-Dm-Upload-Allowed: yes
     - Bump Standards-Version to 3.8.2 (no further changes)
     - Add python-setuptools as build-dep
+    - Recommends python-wnck instead of python-gnome2-desktop
   * debian/watch: Fix URL
   * Bump debhelper compatibility to 7
   * debian/rules: Drop dh_desktop call, not needed anymore
   * Use correct pysupport policy
   * Update copyright file
 
- -- Laurent Bigonville <bigon@debian.org>  Sat, 11 Jul 2009 13:35:44 +0200
+ -- Laurent Bigonville <bigon@debian.org>  Sat, 11 Jul 2009 13:39:35 +0200
 
 d-feet (0.1.8-3) unstable; urgency=low
 
