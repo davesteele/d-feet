@@ -8,4 +8,3 @@ include /usr/share/cdbs/1/rules/simple-patchsys.mk
 
 binary-install/d-feet::
 	dh_icons -pd-feet
-	dh_desktop -pd-feet

@@ -4,15 +4,14 @@ Priority: extra
 Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@lists.alioth.debian.org>
 Uploaders: Laurent Bigonville <bigon@debian.org>
 Build-Depends: cdbs,
-               debhelper (>= 5.0.51~),
-               python2.5
+               debhelper (>= 7),
+               python2.5,
+               python-setuptools
 Build-Depends-Indep: python-support (>= 0.5.3)
-Standards-Version: 3.8.0
-XS-Python-Version: >= 2.5
+Standards-Version: 3.8.2
 Vcs-Svn: svn://svn.debian.org/svn/pkg-utopia/packages/unstable/d-feet/
 Vcs-Browser: http://svn.debian.org/wsvn/pkg-utopia/packages/unstable/d-feet/
 Homepage: http://www.fedorahosted.org/d-feet
-XS-Dm-Upload-Allowed: yes
 
 Package: d-feet
 Architecture: all
@@ -24,7 +23,6 @@ Depends: ${shlibs:Depends},
          python-gtk2,
          python-glade2,
 Recommends: python-gnome2-desktop
-XB-Python-Version: ${python:Versions}
 Description: A D-Bus object browser, viewer and debugger
  d-feet is a D-Bus debugger that allow you to:
   * View names on the session and system bus
