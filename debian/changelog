@@ -1,3 +1,10 @@
+d-feet (0.1.10-2) UNRELEASED; urgency=low
+
+  * Bump Standards-Version to 3.8.3
+  * Add hicolor-icon-theme to dependencies (Closes: #546764)
+
+ -- Laurent Bigonville <bigon@debian.org>  Thu, 24 Sep 2009 15:32:07 +0200
+
 d-feet (0.1.10-1) unstable; urgency=low
 
   * New upstream release.
