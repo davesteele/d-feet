@@ -1,4 +1,4 @@
-d-feet (0.1.10-2) UNRELEASED; urgency=low
+d-feet (0.1.10-2) unstable; urgency=low
 
   * Bump Standards-Version (no further change)
   * Build-depend on python (>= 2.5) instead of python2.5. 
@@ -6,7 +6,7 @@ d-feet (0.1.10-2) UNRELEASED; urgency=low
   * Use new source package version '3.0 (quilt)'
   * debian/d-feet.1: Update my email address
 
- -- Laurent Bigonville <bigon@debian.org>  Sat, 20 Feb 2010 12:44:52 +0100
+ -- Laurent Bigonville <bigon@debian.org>  Sat, 20 Feb 2010 12:46:20 +0100
 
 d-feet (0.1.10-1.1) unstable; urgency=low
 
