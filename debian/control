@@ -5,7 +5,7 @@ Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@lists.alioth.debian.
 Uploaders: Laurent Bigonville <bigon@debian.org>
 Build-Depends: cdbs,
                debhelper (>= 7),
-               python2.5,
+               python (>= 2.5),
                python-setuptools
 Build-Depends-Indep: python-support (>= 0.5.3)
 Standards-Version: 3.8.4
