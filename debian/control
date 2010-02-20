@@ -8,7 +8,7 @@ Build-Depends: cdbs,
                python2.5,
                python-setuptools
 Build-Depends-Indep: python-support (>= 0.5.3)
-Standards-Version: 3.8.2
+Standards-Version: 3.8.4
 Vcs-Svn: svn://svn.debian.org/svn/pkg-utopia/packages/unstable/d-feet/
 Vcs-Browser: http://svn.debian.org/wsvn/pkg-utopia/packages/unstable/d-feet/
 Homepage: http://www.fedorahosted.org/d-feet
