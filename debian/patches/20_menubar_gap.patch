@@ -1,0 +1,83 @@
+From 15efcb72560bb0decffaf7c5bc58897ee084dad8 Mon Sep 17 00:00:00 2001
+From: Chris Couzens <ccouzens@gmail.com>
+Date: Wed, 14 Apr 2010 21:39:01 +0100
+Subject: [PATCH] removed gap between window titlebar and menubar
+
+This makes the window titlebar and menubar appear merged in themes
+such as the one Ubuntu 10.04 uses.
+---
+ ui/mainwindow.ui |   40 ++++++++++++++++++++--------------------
+ 1 files changed, 20 insertions(+), 20 deletions(-)
+
+diff --git a/ui/mainwindow.ui b/ui/mainwindow.ui
+index 2cbf850..cd3ae66 100644
+--- a/ui/mainwindow.ui
++++ b/ui/mainwindow.ui
+@@ -9,29 +9,29 @@
+     <property name="visible">True</property>
+     <property name="width_request">300</property>
+     <child>
++      <object class="GtkVBox" id="vbox1">
++        <property name="visible">True</property>
++        <child>
++          <object class="GtkMenuBar" id="menubar1" constructor="default-uiman" />
++          <packing>
++            <property name="expand">False</property>
++          </packing>
++        </child>
++        <child>
++          <object constructor="default-uiman" class="GtkToolbar" id="toolbar1">
++            <property name="toolbar_style">both-horiz</property>
++            <property name="visible">True</property>
++          </object>
++          <packing>
++            <property name="expand">False</property>
++          </packing>
++        </child>
++    <child>
+       <object class="GtkVPaned" id="vpaned1">
+         <property name="visible">True</property>
+         <child>
+           <object class="GtkFrame" id="frame1">
+             <property name="visible">True</property>
+-            <child>
+-              <object class="GtkVBox" id="vbox1">
+-                <property name="visible">True</property>
+-                <child>
+-                  <object class="GtkMenuBar" id="menubar1" constructor="default-uiman" />
+-                  <packing>
+-                    <property name="expand">False</property>
+-                  </packing>
+-                </child>
+-                <child>
+-                  <object constructor="default-uiman" class="GtkToolbar" id="toolbar1">
+-                    <property name="toolbar_style">both-horiz</property>
+-                    <property name="visible">True</property>
+-                  </object>
+-                  <packing>
+-                    <property name="expand">False</property>
+-                  </packing>
+-                </child>
+                 <child>
+                   <object class="GtkNotebook" id="display_notebook">
+                     <property name="enable_popup">True</property>
+@@ -43,8 +43,6 @@
+                     </child>
+                   </object>
+                 </child>
+-              </object>
+-            </child>
+           </object>
+           <packing>
+               <property name="shrink">False</property>
+@@ -82,5 +80,7 @@
+         </child>
+       </object>
+     </child>
++      </object>
++    </child>
+   </object>
+ </interface>
+-- 
+1.7.0.4
+
