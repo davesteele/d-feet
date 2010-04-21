@@ -1,11 +1,17 @@
+d-feet (0.1.10-4) UNRELEASED; urgency=low
+
+  * debian/control: Use viewsvn instead of wsvn for Vcs-Browser
+
+ -- Laurent Bigonville <bigon@debian.org>  Wed, 21 Apr 2010 11:41:13 +0200
+
 d-feet (0.1.10-3) unstable; urgency=low
 
   * Thanks to Robert Ancell <robert.ancell@canonical.com>
     for these patches
   * debian/patches/10_tree_model_crash.patch:
-    - Fix crash in tree model API usage (Closes: #539759)
+    - Fix crash in tree model API usage
   * debian/patches/11_selection_crash.patch:
-    - Fix crash deselecting tree view
+    - Fix crash deselecting tree view (Closes: #539759)
   * debian/patches/20_menubar_gap.patch:
     - Fix spacing around the menubar
 
