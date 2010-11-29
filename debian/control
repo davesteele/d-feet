@@ -12,7 +12,7 @@ Standards-Version: 3.9.1
 XS-Python-Version: >= 2.5
 Vcs-Git: git://git.debian.org/git/pkg-utopia/d-feet.git
 Vcs-Browser: http://git.debian.org/?p=pkg-utopia/d-feet.git;a=summary
-Homepage: http://www.fedorahosted.org/d-feet
+Homepage: http://live.gnome.org/DFeet/
 
 Package: d-feet
 Architecture: all
