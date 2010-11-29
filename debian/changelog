@@ -1,4 +1,4 @@
-d-feet (0.1.10-4) UNRELEASED; urgency=low
+d-feet (0.1.10-4) unstable; urgency=low
 
   [ Laurent Bigonville ]
   * debian/control: Use viewsvn instead of wsvn for Vcs-Browser
@@ -11,7 +11,7 @@ d-feet (0.1.10-4) UNRELEASED; urgency=low
     - Update Homepage URL.
   * Update watch file, package is now hosted on gnome.org.
 
- -- Michael Biebl <biebl@debian.org>  Mon, 29 Nov 2010 01:19:07 +0100
+ -- Michael Biebl <biebl@debian.org>  Mon, 29 Nov 2010 01:29:19 +0100
 
 d-feet (0.1.10-3) unstable; urgency=low
 
