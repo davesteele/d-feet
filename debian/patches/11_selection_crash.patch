@@ -1,0 +1,20 @@
+## Description: add some description
+## Origin/Author: add some origin or author
+## Bug: bug URL
+Index: d-feet-0.1.10/dfeet/_ui/busnameinfobox.py
+===================================================================
+--- d-feet-0.1.10.orig/dfeet/_ui/busnameinfobox.py	2010-04-19 14:23:28.906535894 +1000
++++ d-feet-0.1.10/dfeet/_ui/busnameinfobox.py	2010-04-19 14:23:23.906620054 +1000
+@@ -95,9 +95,9 @@
+ 
+     def cursor_changed_handler(self, treeview):
+         node = self.get_selected_node()
+-        node.on_selected(self.busname)
+-
+-        self.emit('selected', node)
++        if node:
++            node.on_selected(self.busname)
++            self.emit('selected', node)
+ 
+     def get_selected_node(self):
+         selection = self.introspect_tree_view.get_selection()
