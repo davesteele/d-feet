@@ -1,6 +1,7 @@
 AUTHORS
 COPYING
 MANIFEST.in
+NEWS
 README
 d-feet
 setup.cfg
