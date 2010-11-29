@@ -9,12 +9,12 @@ such as the one Ubuntu 10.04 uses.
  ui/mainwindow.ui |   40 ++++++++++++++++++++--------------------
  1 files changed, 20 insertions(+), 20 deletions(-)
 
-diff --git a/ui/mainwindow.ui b/ui/mainwindow.ui
-index 2cbf850..cd3ae66 100644
---- a/ui/mainwindow.ui
-+++ b/ui/mainwindow.ui
+Index: d-feet/ui/mainwindow.ui
+===================================================================
+--- d-feet.orig/ui/mainwindow.ui	2010-11-29 01:51:06.716248001 +0100
++++ d-feet/ui/mainwindow.ui	2010-11-29 01:59:38.444248022 +0100
 @@ -9,29 +9,29 @@
-     <property name="visible">True</property>
+     <property name="visible">False</property>
      <property name="width_request">300</property>
      <child>
 +      <object class="GtkVBox" id="vbox1">
@@ -35,7 +35,7 @@ index 2cbf850..cd3ae66 100644
 +          </packing>
 +        </child>
 +    <child>
-       <object class="GtkVPaned" id="vpaned1">
+       <object class="GtkVBox" id="main_vbox">
          <property name="visible">True</property>
          <child>
            <object class="GtkFrame" id="frame1">
@@ -69,8 +69,8 @@ index 2cbf850..cd3ae66 100644
 -            </child>
            </object>
            <packing>
-               <property name="shrink">False</property>
-@@ -82,5 +80,7 @@
+               <property name="expand">True</property>
+@@ -80,5 +78,7 @@
          </child>
        </object>
      </child>
@@ -78,6 +78,3 @@ index 2cbf850..cd3ae66 100644
 +    </child>
    </object>
  </interface>
--- 
-1.7.0.4
-
