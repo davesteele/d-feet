@@ -1,8 +1,13 @@
 d-feet (0.1.10-4) UNRELEASED; urgency=low
 
+  [ Laurent Bigonville ]
   * debian/control: Use viewsvn instead of wsvn for Vcs-Browser
 
- -- Laurent Bigonville <bigon@debian.org>  Wed, 21 Apr 2010 11:41:13 +0200
+  [ Michael Biebl ]
+  * debian/control
+    - Add myself to Uploaders.
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 29 Nov 2010 01:19:07 +0100
 
 d-feet (0.1.10-3) unstable; urgency=low
 
