@@ -9,6 +9,7 @@ d-feet (0.1.10-4) UNRELEASED; urgency=low
     - Update Vcs-* fields: Move packaging from svn to git.
     - Bump Standards-Version to 3.9.1. No further changes.
     - Update Homepage URL.
+  * Update watch file, package is now hosted on gnome.org.
 
  -- Michael Biebl <biebl@debian.org>  Mon, 29 Nov 2010 01:19:07 +0100
 

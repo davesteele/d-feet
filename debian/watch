@@ -1,2 +1,2 @@
 version=3
-http://johnp.fedorapeople.org/downloads/d-feet/d-feet-(.*).tar.gz
+http://ftp.gnome.org/pub/GNOME/sources/d-feet/([\d\.]*)/d-feet-(.*)\.tar\.gz
