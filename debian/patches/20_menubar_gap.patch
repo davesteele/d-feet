@@ -5,6 +5,8 @@ Subject: [PATCH] removed gap between window titlebar and menubar
 
 This makes the window titlebar and menubar appear merged in themes
 such as the one Ubuntu 10.04 uses.
+
+Forwarded-To: https://bugzilla.gnome.org/show_bug.cgi?id=636026
 ---
  ui/mainwindow.ui |   40 ++++++++++++++++++++--------------------
  1 files changed, 20 insertions(+), 20 deletions(-)
