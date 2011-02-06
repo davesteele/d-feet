@@ -1,6 +1,6 @@
-## Description: add some description
-## Origin/Author: add some origin or author
-## Bug: bug URL
+Description: Fix crash in tree_model
+Author: Robert Ancell <robert.ancell@canonical.com>
+Bug: https://bugzilla.gnome.org/show_bug.cgi?id=636024
 Index: d-feet-0.1.10/dfeet/introspect_data.py
 ===================================================================
 --- d-feet-0.1.10.orig/dfeet/introspect_data.py	2010-04-19 13:59:03.454051568 +1000

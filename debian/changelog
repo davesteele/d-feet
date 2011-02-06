@@ -1,3 +1,10 @@
+d-feet (0.1.12-1) experimental; urgency=low
+
+  * New upstream release.
+  * Refresh debian/patches/20_menubar_gap.patch.
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 29 Nov 2010 02:07:42 +0100
+
 d-feet (0.1.10-4) unstable; urgency=low
 
   [ Laurent Bigonville ]

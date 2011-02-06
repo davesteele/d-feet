@@ -1,6 +1,6 @@
-## Description: add some description
-## Origin/Author: add some origin or author
-## Bug: bug URL
+Description: Fix crash in cursor_changed_handler if selection is null
+Author: Robert Ancell <robert.ancell@canonical.com>
+Bug: https://bugzilla.gnome.org/show_bug.cgi?id=636025
 Index: d-feet-0.1.10/dfeet/_ui/busnameinfobox.py
 ===================================================================
 --- d-feet-0.1.10.orig/dfeet/_ui/busnameinfobox.py	2010-04-19 14:23:28.906535894 +1000
