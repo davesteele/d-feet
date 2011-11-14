@@ -21,7 +21,6 @@ Depends: ${shlibs:Depends},
          ${python:Depends},
          python-dbus (>= 0.82.3),
          python-gtk2,
-         python-glade2,
          hicolor-icon-theme
 Recommends: python-wnck
 XB-Python-Version: ${python:Versions}

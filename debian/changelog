@@ -6,6 +6,7 @@ d-feet (0.1.14-1) UNRELEASED; urgency=low
   * Bump Standards-Version to 3.9.2. No further changes.
   * debian/control:
     - Remove article from description synopsis.
+    - Drop Depends on python-glade2.
 
  -- Michael Biebl <biebl@debian.org>  Mon, 14 Nov 2011 21:51:02 +0100
 
