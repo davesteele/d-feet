@@ -3,6 +3,7 @@ d-feet (0.1.14-1) UNRELEASED; urgency=low
   * New upstream release.
   * debian/watch: Track .xz tarballs.
   * Bump debhelper compatibility level to 8.
+  * Bump Standards-Version to 3.9.2. No further changes.
 
  -- Michael Biebl <biebl@debian.org>  Mon, 14 Nov 2011 21:51:02 +0100
 
