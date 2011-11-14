@@ -1,4 +1,4 @@
-d-feet (0.1.14-1) UNRELEASED; urgency=low
+d-feet (0.1.14-1) unstable; urgency=low
 
   * New upstream release.
   * debian/watch: Track .xz tarballs.
@@ -8,7 +8,7 @@ d-feet (0.1.14-1) UNRELEASED; urgency=low
     - Remove article from description synopsis.
     - Drop Depends on python-glade2.
 
- -- Michael Biebl <biebl@debian.org>  Mon, 14 Nov 2011 21:51:02 +0100
+ -- Michael Biebl <biebl@debian.org>  Mon, 14 Nov 2011 22:35:45 +0100
 
 d-feet (0.1.12-2) unstable; urgency=low
 
