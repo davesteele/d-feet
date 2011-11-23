@@ -1,3 +1,10 @@
+d-feet (0.1.14-2) UNRELEASED; urgency=low
+
+  * debian/control:
+    - Update Vcs-* fields to new URL
+
+ -- Laurent Bigonville <bigon@debian.org>  Wed, 23 Nov 2011 13:13:55 +0100
+
 d-feet (0.1.14-1) unstable; urgency=low
 
   * New upstream release.
