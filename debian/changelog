@@ -2,7 +2,7 @@ d-feet (0.1.14-2) UNRELEASED; urgency=low
 
   * debian/control:
     - Update Vcs-* fields to new URL
-    - Bump Build-dependency for dh_python2 support
+    - Bump Build-dependencies for dh_python2 support
   * debian/rules:
     - Move to dh_python2 support
 
