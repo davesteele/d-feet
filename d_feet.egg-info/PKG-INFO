@@ -1,11 +1,11 @@
-Metadata-Version: 1.0
+Metadata-Version: 1.1
 Name: d-feet
-Version: 0.1.14
+Version: 0.3.1
 Summary: D-Bus debugger
-Home-page: http://live.gnome.org/d-feet/
-Author: John (J5) Palmieri
-Author-email: johnp@redhat.com
+Home-page: https://live.gnome.org/DFeet/
+Author: Thomas Bechtold
+Author-email: thomasbechtold@jpberlin.de
 License: GNU GPL
-Download-URL: http://live.gnome.org/d-feet/
+Download-URL: http://download.gnome.org/sources/d-feet/
 Description: D-Feet is a powerful D-Bus debugger
 Platform: linux

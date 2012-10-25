@@ -10,7 +10,7 @@ from subprocess import *
 import os
 import glob
 
-DFEET_VERSION='0.1.14'
+DFEET_VERSION='0.3.1'
 
 #Create an array with all the locale filenames
 I18NFILES = []
@@ -46,25 +46,26 @@ else:
         
 dist = setup(name='d-feet',
     version=DFEET_VERSION,
-    author='John (J5) Palmieri',
-    author_email='johnp@redhat.com',
-    maintainer='John (J5) Palmieri',
-    maintainer_email='johnp@redhat.com',
+    author='John (J5) Palmieri, Thomas Bechtold',
+    author_email='johnp@redhat.com, thomasbechtold@jpberlin.de',
+    maintainer='Thomas Bechtold',
+    maintainer_email='thomasbechtold@jpberlin.de',
     description='D-Bus debugger',
     long_description='D-Feet is a powerful D-Bus debugger',
-    url='http://live.gnome.org/d-feet/',
-    download_url='http://live.gnome.org/d-feet/',
+    url='https://live.gnome.org/DFeet/',
+    download_url='http://download.gnome.org/sources/d-feet/',
     license='GNU GPL',
     platforms='linux',
     scripts=['d-feet'],
     packages=['dfeet', 'dfeet/_ui'],
     data_files=[
         ('share/dfeet', glob.glob("ui/*.ui")),
-        ('share/icons/hicolor/16x16/apps', glob.glob("icons/16x16/*.png")),
-        ('share/icons/hicolor/24x24/apps', glob.glob("icons/24x24/*.png")),
-        ('share/icons/hicolor/32x32/apps', glob.glob("icons/32x32/*.png")),
-        ('share/icons/hicolor/48x48/apps', glob.glob("icons/48x48/*.png")),
-        ('share/icons/hicolor/256x256/apps', glob.glob("icons/256x256/*.png")),
+        ('share/icons/hicolor/16x16/apps', glob.glob("icons/hicolor/16x16/apps/*.png")),
+        ('share/icons/hicolor/24x24/apps', glob.glob("icons/hicolor/24x24/apps/*.png")),
+        ('share/icons/hicolor/32x32/apps', glob.glob("icons/hicolor/32x32/apps/*.png")),
+        ('share/icons/hicolor/48x48/apps', glob.glob("icons/hicolor/48x48/apps/*.png")),
+        ('share/icons/hicolor/256x256/apps', glob.glob("icons/hicolor/256x256/apps/*.png")),
+        ('share/icons/hicolor/scalable/apps', glob.glob("icons/hicolor/scalable/apps/*.svg")),
         ('share/applications', ['ui/dfeet.desktop']),
         ]+I18NFILES+HELPDOCS+HELPIMAGES+OMFFILES
 )
