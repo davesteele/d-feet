@@ -104,10 +104,13 @@ class Settings:
 
         Parameters:
             filename -- path to the settings file.
-                        If None, the default ~/.dfeet/config will be used.
+                        If None, the default $XDG_CONFIG_HOME/d-feet/config will be used.
         """
         if not filename:
-            self.filename = os.path.expanduser("~/.d-feet/config")
+            if os.environ.has_key('XDG_CONFIG_HOME'):
+                self.filename = os.path.join(os.environ['XDG_CONFIG_HOME'], 'd-feet', 'config')
+            else:
+                self.filename = os.path.join(os.environ['HOME'], '.config', 'd-feet', 'config')
         else:
             self.filename = filename
         self.config = ConfigParser.ConfigParser()
@@ -116,7 +119,7 @@ class Settings:
 
     @classmethod
     def get_instance(cls):
-        """ This class is a singlton so use this method to get it """
+        """This class is a singlton so use this method to get it"""
         if cls.instance:
             return cls.instance
 
@@ -172,6 +175,6 @@ class Settings:
         new_file_dir = os.path.split(self.filename)[0]
         if not os.path.isdir(new_file_dir):
             os.makedirs(new_file_dir)
-        file = open(self.filename, 'w')
-        self.config.write(file)
-        file.close()
+        f = open(self.filename, 'w')
+        self.config.write(f)
+        f.close()
