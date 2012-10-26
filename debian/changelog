@@ -1,3 +1,18 @@
+d-feet (0.3.1-1) UNRELEASED; urgency=low
+
+  * New upstream release
+  * debian/patches:
+    - 10_tree_model_crash.patch removed. Applied upstream.
+    - 11_selection_crash.patch removed. Applied upstream.
+    - 20_menubar_gap.patch removed. Applied upstream.
+  * debian/control:
+    - Add Thomas Bechtold to Uploaders
+    - Bump Standards-Version to 3.9.3.
+    - Adjust dependencies for Gtk+3.
+    - Remove python-wnck from Recommends
+
+ -- Thomas Bechtold <thomasbechtold@jpberlin.de>  Thu, 25 Oct 2012 07:35:39 +0200
+
 d-feet (0.1.14-2) UNRELEASED; urgency=low
 
   * debian/control:
