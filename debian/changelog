@@ -1,5 +1,6 @@
-d-feet (0.3.1-1) UNRELEASED; urgency=low
+d-feet (0.3.1-1) experimental; urgency=low
 
+  [ Thomas Bechtold ]
   * New upstream release
   * debian/patches:
     - 10_tree_model_crash.patch removed. Applied upstream.
@@ -11,7 +12,7 @@ d-feet (0.3.1-1) UNRELEASED; urgency=low
     - Adjust dependencies for Gtk+3.
     - Remove python-wnck from Recommends
 
- -- Thomas Bechtold <thomasbechtold@jpberlin.de>  Thu, 25 Oct 2012 07:35:39 +0200
+ -- Michael Biebl <biebl@debian.org>  Thu, 22 Nov 2012 18:37:35 +0100
 
 d-feet (0.1.14-2) UNRELEASED; urgency=low
 
