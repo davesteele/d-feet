@@ -1,9 +1,10 @@
-d-feet (0.3.2-1) UNRELEASED; urgency=low
+d-feet (0.3.2-1) experimental; urgency=low
 
+  [ Thomas Bechtold ]
   * New upstream release
   * debian/control: Bump Standards-Version to 3.9.4.
 
- -- Thomas Bechtold <thomasbechtold@jpberlin.de>  Fri, 11 Jan 2013 16:42:14 +0100
+ -- Michael Biebl <biebl@debian.org>  Fri, 11 Jan 2013 22:14:05 +0100
 
 d-feet (0.3.1-1) experimental; urgency=low
 
