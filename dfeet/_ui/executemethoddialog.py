@@ -3,7 +3,7 @@ import time
 from pprint import pformat
 from gi.repository import GLib, Gio
 
-from uiloader import UILoader
+from dfeet._ui.uiloader import UILoader
 
 
 class ExecuteMethodDialog:
@@ -12,6 +12,11 @@ class ExecuteMethodDialog:
                         'execute_dbus_method_cb' : self.execute_cb,
                         'execute_dialog_close_cb': self.close_cb
                       } 
+
+        self.connection = connection
+        self.connection_is_bus = connection_is_bus
+        self.bus_name = bus_name
+        self.method_obj = method_obj
 
         ui = UILoader(UILoader.UI_EXECUTEDIALOG)
         self.dialog = ui.get_root_widget()
@@ -27,11 +32,6 @@ class ExecuteMethodDialog:
         self.label_min = ui.get_widget('label_min')
         self.label_max = ui.get_widget('label_max')
         ui.connect_signals(signal_dict)
-
-        self.connection = connection
-        self.connection_is_bus = connection_is_bus
-        self.bus_name = bus_name
-        self.method_obj = method_obj
 
         self.label_method_name.set_markup("%s" % (self.method_obj.markup_str))
         self.label_object_path.set_markup("%s" % (self.method_obj.object_path))
@@ -55,8 +55,9 @@ class ExecuteMethodDialog:
         try:
             #build a GVariant
             if params:
-                params = '(' + params + ',)'
-                params_gvariant = GLib.Variant.parse(None, params, None, None)
+                params = "(" + params + ",)"
+                params_code = '(' + self.method_obj.in_args_code + ')'
+                params_gvariant = GLib.Variant(params_code, eval(params))
             else:
                 params_gvariant = None
             
