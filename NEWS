@@ -1,3 +1,11 @@
+0.3.3 - Jan 12, 2013
+====================
+
+- Don't close dialog after method execution (Thomas Bechtold)
+- Add close-button to exception dialog (Thomas Bechtold)
+- Fix needed double click to close method execution dialog (Thomas Bechtold)
+- Update HACKING (Thomas Bechtold)
+
 0.3.2 - Jan 10, 2013
 ====================
 
