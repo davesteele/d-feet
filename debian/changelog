@@ -1,8 +1,9 @@
-d-feet (0.3.3-1) UNRELEASED; urgency=low
+d-feet (0.3.3-1) experimental; urgency=low
 
+  [ Thomas Bechtold ]
   * New upstream release
 
- -- Thomas Bechtold <thomasbechtold@jpberlin.de>  Sat, 12 Jan 2013 16:14:19 +0100
+ -- Michael Biebl <biebl@debian.org>  Mon, 14 Jan 2013 14:16:09 +0100
 
 d-feet (0.3.2-1) experimental; urgency=low
 
