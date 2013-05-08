@@ -1,3 +1,9 @@
+d-feet (0.3.3-2) unstable; urgency=low
+
+  * Release to unstable
+
+ -- Thomas Bechtold <thomasbechtold@jpberlin.de>  Wed, 08 May 2013 18:34:38 +0200
+
 d-feet (0.3.3-1) experimental; urgency=low
 
   [ Thomas Bechtold ]
