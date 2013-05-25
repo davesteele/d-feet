@@ -1,3 +1,24 @@
+d-feet (0.3.4-1) UNRELEASED; urgency=low
+
+  * New upstream release.
+  * debian/rules:
+    - Remove python-distutils.mk and add python-autotools.mk and
+      autoreconf.mk according to build-system switch.
+    - Execute testsuite during build.
+  * debian/control:
+    - Remove Build-Depends python-setuptools according to build-system
+      switch.
+    - Bump X-Python-version to >= 2.7 according to configure.ac.
+    - Build-Depends on dh-autoreconf and gnome-common according to
+      build-system switch.
+    - Build-Depends on pep8 according to configure.ac.
+    - Build-Depends on libgtk-3-dev (>= 3.6) according to configure.ac.
+    - Build-Depends on yelp-tools according to configure.ac.
+    - Build-Depends on python-gi (>= 3.3.91), gir1.2-gtk-3.0 (>= 3.6), xvfb
+      and xauth to be able to execute the test suite.
+
+ -- Thomas Bechtold <thomasbechtold@jpberlin.de>  Sat, 25 May 2013 08:35:01 +0200
+
 d-feet (0.3.3-2) unstable; urgency=low
 
   * Release to unstable
