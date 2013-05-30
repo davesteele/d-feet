@@ -16,6 +16,11 @@ d-feet (0.3.4-1) UNRELEASED; urgency=low
     - Build-Depends on yelp-tools according to configure.ac.
     - Build-Depends on python-gi (>= 3.3.91), gir1.2-gtk-3.0 (>= 3.6), xvfb
       and xauth to be able to execute the test suite.
+  * debian/patches:
+    - Add 03-disable-dbus-tests.patch: disable tests which need systembus
+      and sessionbus.
+    - Add 02-no-gettext.patch: remove gettext macros, otherwise autoreconf
+      fails due to incompatibilities with intltool.
 
  -- Thomas Bechtold <thomasbechtold@jpberlin.de>  Sat, 25 May 2013 08:35:01 +0200
 
