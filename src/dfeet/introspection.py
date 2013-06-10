@@ -11,6 +11,7 @@ from dfeet.introspection_helper import DBusInterface
 from dfeet.introspection_helper import DBusProperty
 from dfeet.introspection_helper import DBusSignal
 from dfeet.introspection_helper import DBusMethod
+from dfeet.introspection_helper import DBusAnnotation
 
 
 class AddressInfo():
@@ -59,7 +60,7 @@ class AddressInfo():
                 self.connection = Gio.bus_get_sync(self.address, None)
                 self.__label_address.set_text(
                     Gio.dbus_address_get_for_bus_sync(self.address, None))
-            elif Gio.dbus_is_supported_address(self.address):
+            elif Gio.dbus_is_address(self.address):
                 self.connection = Gio.DBusConnection.new_for_address_sync(
                     self.address,
                     Gio.DBusConnectionFlags.AUTHENTICATION_CLIENT |
@@ -217,14 +218,15 @@ class AddressInfo():
                                 self.__treemodel.append(
                                     iface_properties_iter,
                                     ["%s" % property_obj.markup_str, property_obj])
-                        #interface annotations #FIXME: add Annotation object!!!
+                        #interface annotations
                         if len(iface.annotations) > 0:
                             iface_annotations_iter = self.__treemodel.append(
                                 iface_iter, ["<b>Annotations</b>", None])
                             for iface_annotation in iface.annotations:
+                                annotation_obj = DBusAnnotation(iface_obj, iface_annotation)
                                 self.__treemodel.append(
                                     iface_annotations_iter,
-                                    ["%s" % iface_annotation.name, iface_annotation])
+                                    ["%s" % (annotation_obj.markup_str), annotation_obj])
 
             #are more nodes left?
             if len(node_info.nodes) > 0:

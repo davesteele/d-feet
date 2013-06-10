@@ -1,6 +1,6 @@
 AC_PREREQ([2.64])
 AC_INIT([d-feet],
-	[0.3.4],
+	[0.3.5],
 	[http://bugzilla.gnome.org/enter_bug.cgi?product=d-feet],
         [d-feet],
         [http://live.gnome.org/DFeet])
@@ -33,6 +33,8 @@ AM_GNU_GETTEXT([external])
 GETTEXT_PACKAGE=AC_PACKAGE_NAME
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Package name for gettext])
+
+GOBJECT_INTROSPECTION_REQUIRE([0.9.6])
 
 AC_CONFIG_FILES([
 	Makefile
