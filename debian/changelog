@@ -1,3 +1,12 @@
+d-feet (0.3.5-1) unstable; urgency=low
+
+  * New upstream release.
+  * Refresh debian/patches/03-disable-dbus-tests.patch.
+  * debian/control: Add gobject-introspection and libgirepository1.0-dev
+    to Build-Depends according to configure.ac.
+
+ -- Thomas Bechtold <thomasbechtold@jpberlin.de>  Mon, 10 Jun 2013 10:29:44 +0200
+
 d-feet (0.3.4-1) unstable; urgency=low
 
   * New upstream release.
