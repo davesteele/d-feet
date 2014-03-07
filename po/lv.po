@@ -1,26 +1,22 @@
-# Slovenian translation for d-feet.
-# Copyright (C) 2013 d-feet's COPYRIGHT HOLDER
 # This file is distributed under the same license as the d-feet package.
 #
-# Matej Urbančič <mateju@svn.gnome.org>, 2013.
-#
+# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2013.
 msgid ""
 msgstr ""
-"Project-Id-Version: d-feet master\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=d-"
 "feet&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-10-05 11:31+0000\n"
-"PO-Revision-Date: 2013-10-06 18:50+0100\n"
-"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
-"Language-Team: Slovenščina <gnome-si@googlegroups.com>\n"
-"Language: sl_SI\n"
+"POT-Creation-Date: 2013-10-01 10:08+0000\n"
+"PO-Revision-Date: 2013-10-03 15:51+0300\n"
+"Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
+"Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
+"Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: ../data/d-feet.desktop.in.in.h:1
 msgid "D-Feet"
@@ -28,84 +24,76 @@ msgstr "D-Feet"
 
 #: ../data/d-feet.desktop.in.in.h:2
 msgid "D-Bus Debugger"
-msgstr "Razhroščevalnik vodila D-Bus"
+msgstr "D-Bus atkļūdotājs"
 
 #: ../data/d-feet.desktop.in.in.h:3
 msgid "Debug D-Bus applications"
-msgstr "Razhroščevanje programov vodila D-Bus"
+msgstr "Atkļūdo D-Bus lietotnes"
 
 #: ../data/d-feet.desktop.in.in.h:4
 msgid "debug;d-bus;"
-msgstr "razhroščevanje;vodilo; d-bus;dbus;"
+msgstr "debug;d-bus;atkļūdošana;"
 
 #: ../data/ui/addconnectiondialog.ui.h:1
 msgid "Add a Connection"
-msgstr "Dodaj povezavo"
+msgstr "Pievienot savienojumu"
 
 #: ../data/ui/addconnectiondialog.ui.h:2
 msgid "See http://dbus.freedesktop.org/doc/dbus-specification.html#addresses"
 msgstr ""
-"Oglejte si http://dbus.freedesktop.org/doc/dbus-specification.html#addresses"
+"Skatiet http://dbus.freedesktop.org/doc/dbus-specification.html#addresses"
 
 #: ../data/ui/addconnectiondialog.ui.h:3 ../data/ui/introspection.ui.h:3
 msgid "Address:"
-msgstr "Naslov:"
+msgstr "Adrese:"
 
-#: ../data/ui/app-menu.ui.h:1
-msgid "About"
-msgstr "O Programu"
-
-#: ../data/ui/app-menu.ui.h:2
-msgid "Help"
-msgstr "Pomoč"
-
-#: ../data/ui/app-menu.ui.h:3
-msgid "Quit"
-msgstr "Končaj"
+#: ../data/ui/bus.ui.h:1
+msgid "Filter busnames:"
+msgstr "Filtrēt kopņu nosaukums:"
 
 #: ../data/ui/executedialog.ui.h:1
 msgid "Execute D-Bus Method"
-msgstr "Izvedi način vodila"
+msgstr "Izpildīt D-Bus metodi"
 
 #: ../data/ui/executedialog.ui.h:2
 msgid "_Execute"
-msgstr "_Izvedi"
+msgstr "Izpi_ldīt"
 
 #: ../data/ui/executedialog.ui.h:3
 msgid "Method name:"
-msgstr "Ime načina:"
+msgstr "Metodes nosaukums:"
 
 #: ../data/ui/executedialog.ui.h:4
 msgid "Object Path:"
-msgstr "Pot predmeta:"
+msgstr "Objekta ceļš:"
 
 #: ../data/ui/executedialog.ui.h:5
 msgid "Interface:"
-msgstr "Vmesnik:"
+msgstr "Saskarne:"
 
 #: ../data/ui/executedialog.ui.h:6
 msgid "Method input"
-msgstr "Dovod načina"
+msgstr "Metodes ievade"
 
 #: ../data/ui/executedialog.ui.h:7
 msgid "Method output"
-msgstr "Odvod načina"
+msgstr "Metodes izvade"
 
 #: ../data/ui/executedialog.ui.h:8
 msgid "Pretty print"
-msgstr "Oblikovno izrisovanje"
+msgstr "Noformēt"
 
 #: ../data/ui/executedialog.ui.h:9
 msgid "Source"
-msgstr "Vir"
+msgstr "Avots"
 
 #: ../data/ui/executedialog.ui.h:10
 msgid "Method execution"
-msgstr "Izvajanje načina"
+msgstr "Metodes izpilde"
 
 #: ../data/ui/executedialog.ui.h:11
 msgid "Number of method executions"
-msgstr "Število izvedbe načina"
+msgstr "Izpildīto metožu skaits"
 
 #: ../data/ui/executedialog.ui.h:12
 msgid "Ø:"
@@ -113,52 +101,53 @@ msgstr "Ø:"
 
 #: ../data/ui/executedialog.ui.h:13
 msgid "Average method execution time in seconds"
-msgstr "Povprečni čas izvajanja načina v sekundah"
+msgstr "Vidējais metožu izpildes laiks sekundēs"
 
 #: ../data/ui/executedialog.ui.h:14
 msgid "Min:"
-msgstr "Najmanj:"
+msgstr "Min:"
 
 #: ../data/ui/executedialog.ui.h:15
 msgid "Minimal method execution time in seconds"
-msgstr "Najkrajši čas izvajanja načina v sekundah"
+msgstr "Minimālais metožu izpildes laiks sekundēs"
 
 #: ../data/ui/executedialog.ui.h:16
 msgid "Max:"
-msgstr "Največ:"
+msgstr "Maks:"
 
 #: ../data/ui/executedialog.ui.h:17
 msgid "Maximal method execution time in seconds"
-msgstr "Najdaljši čas izvajanja načina v sekundah"
+msgstr "Maksimālais metožu izpildes laiks sekundēs"
 
 #: ../data/ui/introspection.ui.h:1
 msgid "Unique name:"
-msgstr "Enoznačno ime:"
+msgstr "Unikāls nosaukums:"
 
 #: ../data/ui/introspection.ui.h:2
 msgid "Name:"
-msgstr "Ime:"
+msgstr "Nosaukums:"
 
 #: ../data/ui/introspection.ui.h:4
 msgid "Introspecting..."
-msgstr "Preučevanje ..."
+msgstr "Introspektē..."
 
 #: ../data/ui/introspection.ui.h:5
 msgid "Object path"
-msgstr "Pot predmeta"
+msgstr "Objekta ceļš"
 
 #: ../data/ui/mainwindow.ui.h:1
 msgid "Connect to System Bus"
-msgstr "Poveži s sistemskim vodilom"
+msgstr "Savienoties ar sistēmas kopni"
 
 #: ../data/ui/mainwindow.ui.h:2
 msgid "Connect to Session Bus"
-msgstr "Poveži z vodilom seje"
+msgstr "Savienoties ar sesijas kopni"
 
 #: ../data/ui/mainwindow.ui.h:3
 msgid "Connect to other Bus"
-msgstr "Poveži z drdugim sistemskim vodilom"
+msgstr "Savienoties ar citu kopni"
 
 #: ../data/ui/mainwindow.ui.h:4
-msgid "Close Bus"
-msgstr "Zapri vodilo"
+msgid "File"
+msgstr "Datne"
+

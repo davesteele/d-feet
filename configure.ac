@@ -1,6 +1,6 @@
 AC_PREREQ([2.64])
 AC_INIT([d-feet],
-	[0.3.6],
+	[0.3.8],
 	[http://bugzilla.gnome.org/enter_bug.cgi?product=d-feet],
         [d-feet],
         [http://wiki.gnome.org/DFeet])
@@ -18,7 +18,7 @@ YELP_HELP_INIT
 AM_PATH_PYTHON([2.7])
 
 PKG_CHECK_MODULES(DFEET, [
-  gtk+-3.0 >= 3.6
+  gtk+-3.0 >= 3.9.4
 ])
 
 AC_ARG_ENABLE(tests,
@@ -34,9 +34,6 @@ AM_CONDITIONAL(ENABLE_TESTS, test "x$enable_tests" = "xyes")
 
 # i18n stuff
 IT_PROG_INTLTOOL([0.40.0])
-
-AM_GNU_GETTEXT_VERSION([0.17])
-AM_GNU_GETTEXT([external])
 
 GETTEXT_PACKAGE=AC_PACKAGE_NAME
 AC_SUBST(GETTEXT_PACKAGE)

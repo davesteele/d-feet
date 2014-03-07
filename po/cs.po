@@ -1,7 +1,6 @@
 # Czech translation for d-feet.
 # Copyright (C) 2013 d-feet's COPYRIGHT HOLDER
 # This file is distributed under the same license as the d-feet package.
-#
 # Marek Černocký <marek@manet.cz>, 2013.
 #
 msgid ""
@@ -9,8 +8,8 @@ msgstr ""
 "Project-Id-Version: d-feet master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=d-"
 "feet&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-06-03 19:50+0000\n"
-"PO-Revision-Date: 2013-06-09 07:58+0200\n"
+"POT-Creation-Date: 2013-10-03 15:52+0000\n"
+"PO-Revision-Date: 2013-10-04 10:43+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -48,25 +47,17 @@ msgstr "Viz http://dbus.freedesktop.org/doc/dbus-specification.html#addresses"
 msgid "Address:"
 msgstr "Adresa:"
 
-#: ../data/ui/buswatch.ui.h:1
-msgid "Filter:"
-msgstr "Filtr:"
+#: ../data/ui/app-menu.ui.h:1
+msgid "About"
+msgstr "O aplikaci"
 
-#: ../data/ui/buswatch.ui.h:2
-msgid "unique bus name"
-msgstr "jedinečný název sběrnice"
+#: ../data/ui/app-menu.ui.h:2
+msgid "Help"
+msgstr "Nápověda"
 
-#: ../data/ui/buswatch.ui.h:3
-msgid "Command line:"
-msgstr "Příkazový řádek:"
-
-#: ../data/ui/buswatch.ui.h:4
-msgid "Process ID:"
-msgstr "ID procesu:"
-
-#: ../data/ui/buswatch.ui.h:5 ../data/ui/introspection.ui.h:2
-msgid "Name:"
-msgstr "Název:"
+#: ../data/ui/app-menu.ui.h:3
+msgid "Quit"
+msgstr "Ukončit"
 
 #: ../data/ui/executedialog.ui.h:1
 msgid "Execute D-Bus Method"
@@ -114,7 +105,7 @@ msgstr "Počet provedení metody"
 
 #: ../data/ui/executedialog.ui.h:12
 msgid "Ø:"
-msgstr "⌀"
+msgstr "⌀:"
 
 #: ../data/ui/executedialog.ui.h:13
 msgid "Average method execution time in seconds"
@@ -140,6 +131,10 @@ msgstr "Maximální čas provádění metody v sekundách"
 msgid "Unique name:"
 msgstr "Jedinečný název"
 
+#: ../data/ui/introspection.ui.h:2
+msgid "Name:"
+msgstr "Název:"
+
 #: ../data/ui/introspection.ui.h:4
 msgid "Introspecting..."
 msgstr "Prozkoumává se…"
@@ -161,5 +156,5 @@ msgid "Connect to other Bus"
 msgstr "Připojit k jiné sběrnici"
 
 #: ../data/ui/mainwindow.ui.h:4
-msgid "File"
-msgstr "Soubor"
+msgid "Close Bus"
+msgstr "Zavřít sběrnici"
