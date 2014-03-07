@@ -25,7 +25,7 @@ class AddressInfo():
         except:
             pass
 
-    def __init__(self, data_dir, address, name, connection_is_bus=True):
+    def __init__(self, data_dir, address, name, unique_name, connection_is_bus=True):
         self.data_dir = data_dir
         signal_dict = {
             'treeview_row_activated_cb': self.__treeview_row_activated_cb,
@@ -34,7 +34,8 @@ class AddressInfo():
             }
 
         self.address = address  # can be Gio.BusType.SYSTEM or Gio.BusType.SYSTEM or other address
-        self.name = name  # the bus name or None
+        self.name = name  # the well-known name or None
+        self.unique_name = unique_name  # the unique name or None
         self.connection_is_bus = connection_is_bus  # is it a bus or a p2p connection?
 
         #setup UI
@@ -183,50 +184,49 @@ class AddressInfo():
                 #tree_iter = self.__treemodel.append(tree_iter, ["Hallo", None])
 
                 #append interfaces to tree model
-                if len(node_info.interfaces) > 0:
-                    name_iter = self.__treemodel.append(tree_iter,
-                                                        ["<b>Interfaces</b>", None])
-                    for iface in node_info.interfaces:
-                        iface_obj = DBusInterface(node_obj, iface)
-                        iface_iter = self.__treemodel.append(
-                            name_iter,
-                            ["%s" % iface.name, iface_obj])
-                        #interface methods
-                        if len(iface.methods) > 0:
-                            iface_methods_iter = self.__treemodel.append(
-                                iface_iter, ["<b>Methods</b>", None])
-                            for iface_method in iface.methods:
-                                method_obj = DBusMethod(iface_obj, iface_method)
-                                self.__treemodel.append(
-                                    iface_methods_iter,
-                                    ["%s" % method_obj.markup_str, method_obj])
-                        #interface signals
-                        if len(iface.signals) > 0:
-                            iface_signals_iter = self.__treemodel.append(
-                                iface_iter, ["<b>Signals</b>", None])
-                            for iface_signal in iface.signals:
-                                signal_obj = DBusSignal(iface_obj, iface_signal)
-                                self.__treemodel.append(
-                                    iface_signals_iter,
-                                    ["%s" % signal_obj.markup_str, signal_obj])
-                        #interface properties
-                        if len(iface.properties) > 0:
-                            iface_properties_iter = self.__treemodel.append(
-                                iface_iter, ["<b>Properties</b>", None])
-                            for iface_property in iface.properties:
-                                property_obj = DBusProperty(iface_obj, iface_property)
-                                self.__treemodel.append(
-                                    iface_properties_iter,
-                                    ["%s" % property_obj.markup_str, property_obj])
-                        #interface annotations
-                        if len(iface.annotations) > 0:
-                            iface_annotations_iter = self.__treemodel.append(
-                                iface_iter, ["<b>Annotations</b>", None])
-                            for iface_annotation in iface.annotations:
-                                annotation_obj = DBusAnnotation(iface_obj, iface_annotation)
-                                self.__treemodel.append(
-                                    iface_annotations_iter,
-                                    ["%s" % (annotation_obj.markup_str), annotation_obj])
+                name_iter = self.__treemodel.append(tree_iter,
+                                                    ["<b>Interfaces</b>", None])
+                for iface in node_info.interfaces:
+                    iface_obj = DBusInterface(node_obj, iface)
+                    iface_iter = self.__treemodel.append(
+                        name_iter,
+                        ["%s" % iface.name, iface_obj])
+                    #interface methods
+                    if len(iface.methods) > 0:
+                        iface_methods_iter = self.__treemodel.append(
+                            iface_iter, ["<b>Methods</b>", None])
+                        for iface_method in iface.methods:
+                            method_obj = DBusMethod(iface_obj, iface_method)
+                            self.__treemodel.append(
+                                iface_methods_iter,
+                                ["%s" % method_obj.markup_str, method_obj])
+                    #interface signals
+                    if len(iface.signals) > 0:
+                        iface_signals_iter = self.__treemodel.append(
+                            iface_iter, ["<b>Signals</b>", None])
+                        for iface_signal in iface.signals:
+                            signal_obj = DBusSignal(iface_obj, iface_signal)
+                            self.__treemodel.append(
+                                iface_signals_iter,
+                                ["%s" % signal_obj.markup_str, signal_obj])
+                    #interface properties
+                    if len(iface.properties) > 0:
+                        iface_properties_iter = self.__treemodel.append(
+                            iface_iter, ["<b>Properties</b>", None])
+                        for iface_property in iface.properties:
+                            property_obj = DBusProperty(iface_obj, iface_property)
+                            self.__treemodel.append(
+                                iface_properties_iter,
+                                ["%s" % property_obj.markup_str, property_obj])
+                    #interface annotations
+                    if len(iface.annotations) > 0:
+                        iface_annotations_iter = self.__treemodel.append(
+                            iface_iter, ["<b>Annotations</b>", None])
+                        for iface_annotation in iface.annotations:
+                            annotation_obj = DBusAnnotation(iface_obj, iface_annotation)
+                            self.__treemodel.append(
+                                iface_annotations_iter,
+                                ["%s" % (annotation_obj.markup_str), annotation_obj])
 
             #are more nodes left?
             if len(node_info.nodes) > 0:
@@ -242,10 +242,7 @@ class AddressInfo():
                 self.__spinner.set_visible(False)
                 #update name, unique name, ...
                 self.__label_name.set_text(self.name)
-                try:
-                    self.__label_unique_name.set_text(self.connection.get_unique_name())
-                except:
-                    pass
+                self.__label_unique_name.set_text(self.unique_name)
 
                 self.introspect_box.show_all()
 
@@ -279,7 +276,7 @@ if __name__ == "__main__":
         addr = p.addr
 
     name = p.name
-    ai = AddressInfo(addr, name, not p.p2p)
+    ai = AddressInfo(addr, name, None, not p.p2p)
     win = Gtk.Window()
     win.connect("delete-event", Gtk.main_quit)
     win.set_default_size(1024, 768)

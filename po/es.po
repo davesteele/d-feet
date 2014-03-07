@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: d-feet master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=d-"
 "feet&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-05-27 11:37+0000\n"
-"PO-Revision-Date: 2013-05-27 13:52+0200\n"
+"POT-Creation-Date: 2013-10-03 15:52+0000\n"
+"PO-Revision-Date: 2013-10-03 18:19+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -47,25 +47,17 @@ msgstr ""
 msgid "Address:"
 msgstr "Dirección:"
 
-#: ../data/ui/buswatch.ui.h:1
-msgid "Filter:"
-msgstr "Filtro:"
+#: ../data/ui/app-menu.ui.h:1
+msgid "About"
+msgstr "Acerca de"
 
-#: ../data/ui/buswatch.ui.h:2
-msgid "unique bus name"
-msgstr "nombre único del bus"
+#: ../data/ui/app-menu.ui.h:2
+msgid "Help"
+msgstr "Ayuda"
 
-#: ../data/ui/buswatch.ui.h:3
-msgid "Command line:"
-msgstr "Línea de comandos:"
-
-#: ../data/ui/buswatch.ui.h:4
-msgid "Process ID:"
-msgstr "ID del proceso:"
-
-#: ../data/ui/buswatch.ui.h:5 ../data/ui/introspection.ui.h:2
-msgid "Name:"
-msgstr "Nombre:"
+#: ../data/ui/app-menu.ui.h:3
+msgid "Quit"
+msgstr "Salir"
 
 #: ../data/ui/executedialog.ui.h:1
 msgid "Execute D-Bus Method"
@@ -139,6 +131,10 @@ msgstr "Tiempo máximo de ejecución, en segundos"
 msgid "Unique name:"
 msgstr "Nombre único:"
 
+#: ../data/ui/introspection.ui.h:2
+msgid "Name:"
+msgstr "Nombre:"
+
 #: ../data/ui/introspection.ui.h:4
 msgid "Introspecting..."
 msgstr "Introspección…"
@@ -160,5 +156,21 @@ msgid "Connect to other Bus"
 msgstr "Conectar a otro bus"
 
 #: ../data/ui/mainwindow.ui.h:4
-msgid "File"
-msgstr "Archivo"
+msgid "Close Bus"
+msgstr "Cerrar bus"
+
+#~| msgid "unique bus name"
+#~ msgid "Filter busnames:"
+#~ msgstr "Filtrar nombres de bus:"
+
+#~ msgid "File"
+#~ msgstr "Archivo"
+
+#~ msgid "Filter:"
+#~ msgstr "Filtro:"
+
+#~ msgid "Command line:"
+#~ msgstr "Línea de comandos:"
+
+#~ msgid "Process ID:"
+#~ msgstr "ID del proceso:"
