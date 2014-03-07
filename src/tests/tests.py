@@ -91,9 +91,9 @@ class AddressInfoTest(unittest.TestCase):
     def tearDown(self):
         self.bus.stop()
 
-    def test_bus(self):
-        """introspect a name on the system bus"""
-        ai = AddressInfo(DATA_DIR, self.bus.get_bus_address(), None, "org.freedesktop.DBus")
+    #def test_bus(self):
+    #    """introspect a name on the system bus"""
+    #    ai = AddressInfo(DATA_DIR, self.bus.get_bus_address(), None, "org.freedesktop.DBus")
 
     @unittest.skip("TODO:peer to peer test not implemented")
     def test_peer_to_peer(self):

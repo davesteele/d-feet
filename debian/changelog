@@ -1,3 +1,15 @@
+d-feet (0.3.8-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/control:
+    - Use debian address in Uploaders field.
+    - Build-Depends on libgtk-3-dev (>= 3.9.4) according to configure.ac.
+  * debian/patches:
+    - 02-no-gettext.patch: Removed. Applied upstream.
+    - 03-disable-dbus-tests.patch: Refreshed.
+
+ -- Thomas Bechtold <toabctl@debian.org>  Fri, 07 Mar 2014 17:39:04 +0100
+
 d-feet (0.3.6-1) unstable; urgency=low
 
   * New upstream release.

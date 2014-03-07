@@ -1,15 +1,15 @@
 --- a/src/tests/tests.py
 +++ b/src/tests/tests.py
-@@ -86,9 +86,9 @@
+@@ -91,9 +91,9 @@
      def tearDown(self):
          self.bus.stop()
  
 -    def test_bus(self):
 -        """introspect a name on the system bus"""
--        ai = AddressInfo(DATA_DIR, self.bus.get_bus_address(), "org.freedesktop.DBus")
+-        ai = AddressInfo(DATA_DIR, self.bus.get_bus_address(), None, "org.freedesktop.DBus")
 +    #def test_bus(self):
 +    #    """introspect a name on the system bus"""
-+    #    ai = AddressInfo(DATA_DIR, self.bus.get_bus_address(), "org.freedesktop.DBus")
++    #    ai = AddressInfo(DATA_DIR, self.bus.get_bus_address(), None, "org.freedesktop.DBus")
  
      @unittest.skip("TODO:peer to peer test not implemented")
      def test_peer_to_peer(self):
