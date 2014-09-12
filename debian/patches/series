@@ -1,2 +1,3 @@
 01-add-missing-appdata-in-file.patch
+02-make-pep8-happy.patch
 03-disable-dbus-tests.patch

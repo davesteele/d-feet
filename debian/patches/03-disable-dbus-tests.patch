@@ -7,7 +7,7 @@
 -    def test_bus(self):
 -        """introspect a name on the system bus"""
 -        ai = AddressInfo(DATA_DIR, self.bus.get_bus_address(), None, "org.freedesktop.DBus")
-+    #def test_bus(self):
++    # def test_bus(self):
 +    #    """introspect a name on the system bus"""
 +    #    ai = AddressInfo(DATA_DIR, self.bus.get_bus_address(), None, "org.freedesktop.DBus")
  
