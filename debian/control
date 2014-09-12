@@ -18,7 +18,7 @@ Build-Depends: cdbs (>= 0.4.90~),
                python-gi (>= 3.3.91),
                xvfb,
                xauth
-Standards-Version: 3.9.4
+Standards-Version: 3.9.5
 X-Python-Version: >= 2.7
 Vcs-Git: git://anonscm.debian.org/git/pkg-utopia/d-feet.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-utopia/d-feet.git;a=summary

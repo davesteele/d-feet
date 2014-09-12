@@ -5,6 +5,7 @@ d-feet (0.3.9-1) UNRELEASED; urgency=medium
     file is required during autoreconf.
   * Make PEP8 happy. Patch taken from upstream bug tracker. (Closes: #759223)
   * Update Homepage: URL. (Closes: #745752)
+  * Bump Standards-Version to 3.9.5. No further changes.
 
  -- Michael Biebl <biebl@debian.org>  Fri, 12 Sep 2014 16:42:37 +0200
 
