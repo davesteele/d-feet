@@ -4,6 +4,17 @@
   <licence>CC0</licence>
   <description>
     <p>A simple application for debugging the message bus system D-Bus. D-Feet can be used to inspect D-Bus interfaces of running programs and invoke methods on those interfaces.</p>
+    <p xml:lang="cs">Jednoduchá aplikace sloužící k ladění systémové sběrnice zpráv D-Bus. D-Feet se používá ke sledování rozhraní D-Bus běžících aplikací a k volání metod těchto rozhraní.</p>
+    <p xml:lang="el">Μια απλή εφαρμογή για την αποσφαλμάτωση μηνυμάτων του διάυλου συστήματος D-Bus. Το D-Feet μπορεί να χρησιμοποιηθεί για να επιθεωρήσει τις διεπαφές D-Bus των εκτελούμενων προγραμμάτων καθώς και τον μεθόδων των διεπαφών.</p>
+    <p xml:lang="es">Una sencilla aplicación para depurar el bus de mensajes del sistema D-Bus. D-Feet se puede usar para inspeccionar interfaces D-Bus de programas en ejecución y para invocar métodos en esas interfaces.</p>
+    <p xml:lang="fr">Une application simple pour déboguer le bus de message système D-Bus. D-Feet peut être utilisé pour inspecter les interfaces D-Bus des programmes en cours d’exécution et pour appeler les méthodes sur ces interfaces.</p>
+    <p xml:lang="gl">Un aplicativo sinxelo para depurar o bus de mensaxes do sistema D-Bus. D-Feet pode usarse para inspeccionar interfaces de D-Bus dos programas en execución e invocar métodos nesas interfaces.</p>
+    <p xml:lang="hu">Egy egyszerű alkalmazás a D-Bus üzenetbusz-rendszer hibakereséséhez. A D-Feet használható a futó programok D-Bus csatolóinak megfigyeléséhez és metódusok meghívásához azokon a csatolókon.</p>
+    <p xml:lang="pl">Prosty program do debugowania systemowej magistrali komunikatów D-Bus. Program D-Feet może być używany do badania interfejsów D-Bus uruchomionych programów i wywoływania metod na tych interfejsach.</p>
+    <p xml:lang="pt_BR">Um aplicativo simples para depuração do sistema de barramento de mensagens D-Bus. D-Feet pode ser usado para inspecionar interfaces D-Bus de programas em execução e chamar métodos naquelas interfaces.</p>
+    <p xml:lang="sl">Enostaven program za razhroščevanje sporočil sistema vodila D-Bus. Program D-Feet je mogoče uporabiti za nadzor vmesnikov D-Bus  zagnanih programov in za upravljanje.</p>
+    <p xml:lang="sr">Једноставан програм за прочишћавање система сабирнице порука Д-сабирнице. Д-стопа може бити употребљена за проверу сучеља Д-сабирнице покренутих програма и за призивање поступака на тим сучељима.</p>
+    <p xml:lang="sr@latin">Jednostavan program za pročišćavanje sistema sabirnice poruka D-sabirnice. D-stopa može biti upotrebljena za proveru sučelja D-sabirnice pokrenutih programa i za prizivanje postupaka na tim sučeljima.</p>
   </description>
   <screenshots>
     <screenshot width="1400" type="default" height="787">https://git.gnome.org/browse/d-feet/plain/data/screenshots/d-feet-overview.png</screenshot>

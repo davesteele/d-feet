@@ -1,4 +1,4 @@
-# generated automatically by aclocal 1.14 -*- Autoconf -*-
+# generated automatically by aclocal 1.14.1 -*- Autoconf -*-
 
 # Copyright (C) 1996-2013 Free Software Foundation, Inc.
 
@@ -19,6 +19,268 @@ m4_if(m4_defn([AC_AUTOCONF_VERSION]), [2.69],,
 You have another version of autoconf.  It may work, but is not guaranteed to.
 If you have problems, you may need to regenerate the build system entirely.
 To do so, use the procedure documented by the package, typically 'autoreconf'.])])
+
+# gnome-compiler-flags.m4
+#
+# serial 2
+#
+
+dnl GNOME_COMPILE_WARNINGS
+dnl Turn on many useful compiler warnings and substitute the result into
+dnl WARN_CFLAGS
+dnl For now, only works on GCC
+dnl Pass the default value of the --enable-compile-warnings configure option as
+dnl the first argument to the macro, defaulting to 'yes'.
+dnl Additional warning/error flags can be passed as an optional second argument.
+dnl
+dnl For example: GNOME_COMPILE_WARNINGS([maximum],[-Werror=some-flag -Wfoobar])
+AC_DEFUN([GNOME_COMPILE_WARNINGS],[
+    dnl ******************************
+    dnl More compiler warnings
+    dnl ******************************
+
+    AC_ARG_ENABLE(compile-warnings, 
+                  AS_HELP_STRING([--enable-compile-warnings=@<:@no/minimum/yes/maximum/error@:>@],
+                                 [Turn on compiler warnings]),,
+                  [enable_compile_warnings="m4_default([$1],[yes])"])
+
+    if test "x$GCC" != xyes; then
+	enable_compile_warnings=no
+    fi
+
+    warning_flags=
+    realsave_CFLAGS="$CFLAGS"
+
+    dnl These are warning flags that aren't marked as fatal.  Can be
+    dnl overridden on a per-project basis with -Wno-foo.
+    base_warn_flags=" \
+        -Wall \
+        -Wstrict-prototypes \
+        -Wnested-externs \
+    "
+
+    dnl These compiler flags typically indicate very broken or suspicious
+    dnl code.  Some of them such as implicit-function-declaration are
+    dnl just not default because gcc compiles a lot of legacy code.
+    dnl We choose to make this set into explicit errors.
+    base_error_flags=" \
+        -Werror=missing-prototypes \
+        -Werror=implicit-function-declaration \
+        -Werror=pointer-arith \
+        -Werror=init-self \
+        -Werror=format-security \
+        -Werror=format=2 \
+        -Werror=missing-include-dirs \
+    "
+
+    dnl Additional warning or error flags provided by the module author to
+    dnl allow stricter standards to be imposed on a per-module basis.
+    dnl The author can pass -W or -Werror flags here as they see fit.
+    additional_flags="m4_default([$2],[])"
+
+    case "$enable_compile_warnings" in
+    no)
+        warning_flags=
+        ;;
+    minimum)
+        warning_flags="-Wall"
+        ;;
+    yes|maximum|error)
+        warning_flags="$base_warn_flags $base_error_flags $additional_flags"
+        ;;
+    *)
+        AC_MSG_ERROR(Unknown argument '$enable_compile_warnings' to --enable-compile-warnings)
+        ;;
+    esac
+
+    if test "$enable_compile_warnings" = "error" ; then
+        warning_flags="$warning_flags -Werror"
+    fi
+
+    dnl Check whether GCC supports the warning options
+    for option in $warning_flags; do
+	save_CFLAGS="$CFLAGS"
+	CFLAGS="$CFLAGS $option"
+	AC_MSG_CHECKING([whether gcc understands $option])
+	AC_TRY_COMPILE([], [],
+	    has_option=yes,
+	    has_option=no,)
+	CFLAGS="$save_CFLAGS"
+	AC_MSG_RESULT([$has_option])
+	if test $has_option = yes; then
+	    tested_warning_flags="$tested_warning_flags $option"
+	fi
+	unset has_option
+	unset save_CFLAGS
+    done
+    unset option
+    CFLAGS="$realsave_CFLAGS"
+    AC_MSG_CHECKING(what warning flags to pass to the C compiler)
+    AC_MSG_RESULT($tested_warning_flags)
+
+    AC_ARG_ENABLE(iso-c,
+                  AS_HELP_STRING([--enable-iso-c],
+                                 [Try to warn if code is not ISO C ]),,
+                  [enable_iso_c=no])
+
+    AC_MSG_CHECKING(what language compliance flags to pass to the C compiler)
+    complCFLAGS=
+    if test "x$enable_iso_c" != "xno"; then
+	if test "x$GCC" = "xyes"; then
+	case " $CFLAGS " in
+	    *[\ \	]-ansi[\ \	]*) ;;
+	    *) complCFLAGS="$complCFLAGS -ansi" ;;
+	esac
+	case " $CFLAGS " in
+	    *[\ \	]-pedantic[\ \	]*) ;;
+	    *) complCFLAGS="$complCFLAGS -pedantic" ;;
+	esac
+	fi
+    fi
+    AC_MSG_RESULT($complCFLAGS)
+
+    WARN_CFLAGS="$tested_warning_flags $complCFLAGS"
+    AC_SUBST(WARN_CFLAGS)
+])
+
+dnl For C++, do basically the same thing.
+
+AC_DEFUN([GNOME_CXX_WARNINGS],[
+  AC_ARG_ENABLE(cxx-warnings,
+                AS_HELP_STRING([--enable-cxx-warnings=@<:@no/minimum/yes@:>@]
+                               [Turn on compiler warnings.]),,
+                [enable_cxx_warnings="m4_default([$1],[minimum])"])
+
+  AC_MSG_CHECKING(what warning flags to pass to the C++ compiler)
+  warnCXXFLAGS=
+  if test "x$GXX" != xyes; then
+    enable_cxx_warnings=no
+  fi
+  if test "x$enable_cxx_warnings" != "xno"; then
+    if test "x$GXX" = "xyes"; then
+      case " $CXXFLAGS " in
+      *[\ \	]-Wall[\ \	]*) ;;
+      *) warnCXXFLAGS="-Wall -Wno-unused" ;;
+      esac
+
+      ## -W is not all that useful.  And it cannot be controlled
+      ## with individual -Wno-xxx flags, unlike -Wall
+      if test "x$enable_cxx_warnings" = "xyes"; then
+	warnCXXFLAGS="$warnCXXFLAGS -Wshadow -Woverloaded-virtual"
+      fi
+    fi
+  fi
+  AC_MSG_RESULT($warnCXXFLAGS)
+
+   AC_ARG_ENABLE(iso-cxx,
+                 AS_HELP_STRING([--enable-iso-cxx],
+                                [Try to warn if code is not ISO C++ ]),,
+                 [enable_iso_cxx=no])
+
+   AC_MSG_CHECKING(what language compliance flags to pass to the C++ compiler)
+   complCXXFLAGS=
+   if test "x$enable_iso_cxx" != "xno"; then
+     if test "x$GXX" = "xyes"; then
+      case " $CXXFLAGS " in
+      *[\ \	]-ansi[\ \	]*) ;;
+      *) complCXXFLAGS="$complCXXFLAGS -ansi" ;;
+      esac
+
+      case " $CXXFLAGS " in
+      *[\ \	]-pedantic[\ \	]*) ;;
+      *) complCXXFLAGS="$complCXXFLAGS -pedantic" ;;
+      esac
+     fi
+   fi
+  AC_MSG_RESULT($complCXXFLAGS)
+
+  WARN_CXXFLAGS="$CXXFLAGS $warnCXXFLAGS $complCXXFLAGS"
+  AC_SUBST(WARN_CXXFLAGS)
+])
+
+dnl GLIB_GSETTINGS
+dnl Defines GSETTINGS_SCHEMAS_INSTALL which controls whether
+dnl the schema should be compiled
+dnl
+
+AC_DEFUN([GLIB_GSETTINGS],
+[
+  m4_pattern_allow([AM_V_GEN])
+  AC_ARG_ENABLE(schemas-compile,
+                AS_HELP_STRING([--disable-schemas-compile],
+                               [Disable regeneration of gschemas.compiled on install]),
+                [case ${enableval} in
+                  yes) GSETTINGS_DISABLE_SCHEMAS_COMPILE=""  ;;
+                  no)  GSETTINGS_DISABLE_SCHEMAS_COMPILE="1" ;;
+                  *) AC_MSG_ERROR([bad value ${enableval} for --enable-schemas-compile]) ;;
+                 esac])
+  AC_SUBST([GSETTINGS_DISABLE_SCHEMAS_COMPILE])
+  PKG_PROG_PKG_CONFIG([0.16])
+  AC_SUBST(gsettingsschemadir, [${datadir}/glib-2.0/schemas])
+  if test x$cross_compiling != xyes; then
+    GLIB_COMPILE_SCHEMAS=`$PKG_CONFIG --variable glib_compile_schemas gio-2.0`
+  else
+    AC_PATH_PROG(GLIB_COMPILE_SCHEMAS, glib-compile-schemas)
+  fi
+  AC_SUBST(GLIB_COMPILE_SCHEMAS)
+  if test "x$GLIB_COMPILE_SCHEMAS" = "x"; then
+    ifelse([$2],,[AC_MSG_ERROR([glib-compile-schemas not found.])],[$2])
+  else
+    ifelse([$1],,[:],[$1])
+  fi
+
+  GSETTINGS_RULES='
+.PHONY : uninstall-gsettings-schemas install-gsettings-schemas clean-gsettings-schemas
+
+mostlyclean-am: clean-gsettings-schemas
+
+gsettings__enum_file = $(addsuffix .enums.xml,$(gsettings_ENUM_NAMESPACE))
+
+%.gschema.valid: %.gschema.xml $(gsettings__enum_file)
+	$(AM_V_GEN) $(GLIB_COMPILE_SCHEMAS) --strict --dry-run $(addprefix --schema-file=,$(gsettings__enum_file)) --schema-file=$< && mkdir -p [$](@D) && touch [$]@
+
+all-am: $(gsettings_SCHEMAS:.xml=.valid)
+uninstall-am: uninstall-gsettings-schemas
+install-data-am: install-gsettings-schemas
+
+.SECONDARY: $(gsettings_SCHEMAS)
+
+install-gsettings-schemas: $(gsettings_SCHEMAS) $(gsettings__enum_file)
+	@$(NORMAL_INSTALL)
+	if test -n "$^"; then \
+		test -z "$(gsettingsschemadir)" || $(MKDIR_P) "$(DESTDIR)$(gsettingsschemadir)"; \
+		$(INSTALL_DATA) $^ "$(DESTDIR)$(gsettingsschemadir)"; \
+		test -n "$(GSETTINGS_DISABLE_SCHEMAS_COMPILE)$(DESTDIR)" || $(GLIB_COMPILE_SCHEMAS) $(gsettingsschemadir); \
+	fi
+
+uninstall-gsettings-schemas:
+	@$(NORMAL_UNINSTALL)
+	@list='\''$(gsettings_SCHEMAS) $(gsettings__enum_file)'\''; test -n "$(gsettingsschemadir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e '\''s|^.*/||'\''`; \
+	test -n "$$files" || exit 0; \
+	echo " ( cd '\''$(DESTDIR)$(gsettingsschemadir)'\'' && rm -f" $$files ")"; \
+	cd "$(DESTDIR)$(gsettingsschemadir)" && rm -f $$files
+	test -n "$(GSETTINGS_DISABLE_SCHEMAS_COMPILE)$(DESTDIR)" || $(GLIB_COMPILE_SCHEMAS) $(gsettingsschemadir)
+
+clean-gsettings-schemas:
+	rm -f $(gsettings_SCHEMAS:.xml=.valid) $(gsettings__enum_file)
+
+ifdef gsettings_ENUM_NAMESPACE
+$(gsettings__enum_file): $(gsettings_ENUM_FILES)
+	$(AM_V_GEN) glib-mkenums --comments '\''<!-- @comment@ -->'\'' --fhead "<schemalist>" --vhead "  <@type@ id='\''$(gsettings_ENUM_NAMESPACE).@EnumName@'\''>" --vprod "    <value nick='\''@valuenick@'\'' value='\''@valuenum@'\''/>" --vtail "  </@type@>" --ftail "</schemalist>" [$]^ > [$]@.tmp && mv [$]@.tmp [$]@
+endif
+'
+  _GSETTINGS_SUBST(GSETTINGS_RULES)
+])
+
+dnl _GSETTINGS_SUBST(VARIABLE)
+dnl Abstract macro to do either _AM_SUBST_NOTMAKE or AC_SUBST
+AC_DEFUN([_GSETTINGS_SUBST],
+[
+AC_SUBST([$1])
+m4_ifdef([_AM_SUBST_NOTMAKE], [_AM_SUBST_NOTMAKE([$1])])
+]
+)
 
 
 dnl IT_PROG_INTLTOOL([MINIMUM-VERSION], [no-xml])
@@ -235,6 +497,103 @@ AU_ALIAS([AC_PROG_INTLTOOL], [IT_PROG_INTLTOOL])
 # AC_DEFUN([AC_PROG_INTLTOOL], ...)
 
 
+dnl -*- mode: autoconf -*-
+dnl Copyright 2009 Johan Dahlin
+dnl
+dnl This file is free software; the author(s) gives unlimited
+dnl permission to copy and/or distribute it, with or without
+dnl modifications, as long as this notice is preserved.
+dnl
+
+# serial 1
+
+m4_define([_GOBJECT_INTROSPECTION_CHECK_INTERNAL],
+[
+    AC_BEFORE([AC_PROG_LIBTOOL],[$0])dnl setup libtool first
+    AC_BEFORE([AM_PROG_LIBTOOL],[$0])dnl setup libtool first
+    AC_BEFORE([LT_INIT],[$0])dnl setup libtool first
+
+    dnl enable/disable introspection
+    m4_if([$2], [require],
+    [dnl
+        enable_introspection=yes
+    ],[dnl
+        AC_ARG_ENABLE(introspection,
+                  AS_HELP_STRING([--enable-introspection[=@<:@no/auto/yes@:>@]],
+                                 [Enable introspection for this build]),, 
+                                 [enable_introspection=auto])
+    ])dnl
+
+    AC_MSG_CHECKING([for gobject-introspection])
+
+    dnl presence/version checking
+    AS_CASE([$enable_introspection],
+    [no], [dnl
+        found_introspection="no (disabled, use --enable-introspection to enable)"
+    ],dnl
+    [yes],[dnl
+        PKG_CHECK_EXISTS([gobject-introspection-1.0],,
+                         AC_MSG_ERROR([gobject-introspection-1.0 is not installed]))
+        PKG_CHECK_EXISTS([gobject-introspection-1.0 >= $1],
+                         found_introspection=yes,
+                         AC_MSG_ERROR([You need to have gobject-introspection >= $1 installed to build AC_PACKAGE_NAME]))
+    ],dnl
+    [auto],[dnl
+        PKG_CHECK_EXISTS([gobject-introspection-1.0 >= $1], found_introspection=yes, found_introspection=no)
+	dnl Canonicalize enable_introspection
+	enable_introspection=$found_introspection
+    ],dnl
+    [dnl	
+        AC_MSG_ERROR([invalid argument passed to --enable-introspection, should be one of @<:@no/auto/yes@:>@])
+    ])dnl
+
+    AC_MSG_RESULT([$found_introspection])
+
+    INTROSPECTION_SCANNER=
+    INTROSPECTION_COMPILER=
+    INTROSPECTION_GENERATE=
+    INTROSPECTION_GIRDIR=
+    INTROSPECTION_TYPELIBDIR=
+    if test "x$found_introspection" = "xyes"; then
+       INTROSPECTION_SCANNER=`$PKG_CONFIG --variable=g_ir_scanner gobject-introspection-1.0`
+       INTROSPECTION_COMPILER=`$PKG_CONFIG --variable=g_ir_compiler gobject-introspection-1.0`
+       INTROSPECTION_GENERATE=`$PKG_CONFIG --variable=g_ir_generate gobject-introspection-1.0`
+       INTROSPECTION_GIRDIR=`$PKG_CONFIG --variable=girdir gobject-introspection-1.0`
+       INTROSPECTION_TYPELIBDIR="$($PKG_CONFIG --variable=typelibdir gobject-introspection-1.0)"
+       INTROSPECTION_CFLAGS=`$PKG_CONFIG --cflags gobject-introspection-1.0`
+       INTROSPECTION_LIBS=`$PKG_CONFIG --libs gobject-introspection-1.0`
+       INTROSPECTION_MAKEFILE=`$PKG_CONFIG --variable=datadir gobject-introspection-1.0`/gobject-introspection-1.0/Makefile.introspection
+    fi
+    AC_SUBST(INTROSPECTION_SCANNER)
+    AC_SUBST(INTROSPECTION_COMPILER)
+    AC_SUBST(INTROSPECTION_GENERATE)
+    AC_SUBST(INTROSPECTION_GIRDIR)
+    AC_SUBST(INTROSPECTION_TYPELIBDIR)
+    AC_SUBST(INTROSPECTION_CFLAGS)
+    AC_SUBST(INTROSPECTION_LIBS)
+    AC_SUBST(INTROSPECTION_MAKEFILE)
+
+    AM_CONDITIONAL(HAVE_INTROSPECTION, test "x$found_introspection" = "xyes")
+])
+
+
+dnl Usage:
+dnl   GOBJECT_INTROSPECTION_CHECK([minimum-g-i-version])
+
+AC_DEFUN([GOBJECT_INTROSPECTION_CHECK],
+[
+  _GOBJECT_INTROSPECTION_CHECK_INTERNAL([$1])
+])
+
+dnl Usage:
+dnl   GOBJECT_INTROSPECTION_REQUIRE([minimum-g-i-version])
+
+
+AC_DEFUN([GOBJECT_INTROSPECTION_REQUIRE],
+[
+  _GOBJECT_INTROSPECTION_CHECK_INTERNAL([$1], [require])
+])
+
 # nls.m4 serial 5 (gettext-0.18)
 dnl Copyright (C) 1995-2003, 2005-2006, 2008-2013 Free Software Foundation,
 dnl Inc.
@@ -428,367 +787,60 @@ else
 fi[]dnl
 ])# PKG_CHECK_MODULES
 
-# gnome-compiler-flags.m4
-#
-# serial 2
-#
 
-dnl GNOME_COMPILE_WARNINGS
-dnl Turn on many useful compiler warnings and substitute the result into
-dnl WARN_CFLAGS
-dnl For now, only works on GCC
-dnl Pass the default value of the --enable-compile-warnings configure option as
-dnl the first argument to the macro, defaulting to 'yes'.
-dnl Additional warning/error flags can be passed as an optional second argument.
-dnl
-dnl For example: GNOME_COMPILE_WARNINGS([maximum],[-Werror=some-flag -Wfoobar])
-AC_DEFUN([GNOME_COMPILE_WARNINGS],[
-    dnl ******************************
-    dnl More compiler warnings
-    dnl ******************************
-
-    AC_ARG_ENABLE(compile-warnings, 
-                  AC_HELP_STRING([--enable-compile-warnings=@<:@no/minimum/yes/maximum/error@:>@],
-                                 [Turn on compiler warnings]),,
-                  [enable_compile_warnings="m4_default([$1],[yes])"])
-
-    if test "x$GCC" != xyes; then
-	enable_compile_warnings=no
-    fi
-
-    warning_flags=
-    realsave_CFLAGS="$CFLAGS"
-
-    dnl These are warning flags that aren't marked as fatal.  Can be
-    dnl overridden on a per-project basis with -Wno-foo.
-    base_warn_flags=" \
-        -Wall \
-        -Wstrict-prototypes \
-        -Wnested-externs \
-    "
-
-    dnl These compiler flags typically indicate very broken or suspicious
-    dnl code.  Some of them such as implicit-function-declaration are
-    dnl just not default because gcc compiles a lot of legacy code.
-    dnl We choose to make this set into explicit errors.
-    base_error_flags=" \
-        -Werror=missing-prototypes \
-        -Werror=implicit-function-declaration \
-        -Werror=pointer-arith \
-        -Werror=init-self \
-        -Werror=format-security \
-        -Werror=format=2 \
-        -Werror=missing-include-dirs \
-    "
-
-    dnl Additional warning or error flags provided by the module author to
-    dnl allow stricter standards to be imposed on a per-module basis.
-    dnl The author can pass -W or -Werror flags here as they see fit.
-    additional_flags="m4_default([$2],[])"
-
-    case "$enable_compile_warnings" in
-    no)
-        warning_flags=
-        ;;
-    minimum)
-        warning_flags="-Wall"
-        ;;
-    yes)
-        warning_flags="$base_warn_flags $base_error_flags $additional_flags"
-        ;;
-    maximum|error)
-        warning_flags="$base_warn_flags $base_error_flags $additional_flags"
-        ;;
-    *)
-        AC_MSG_ERROR(Unknown argument '$enable_compile_warnings' to --enable-compile-warnings)
-        ;;
-    esac
-
-    if test "$enable_compile_warnings" = "error" ; then
-        warning_flags="$warning_flags -Werror"
-    fi
-
-    dnl Check whether GCC supports the warning options
-    for option in $warning_flags; do
-	save_CFLAGS="$CFLAGS"
-	CFLAGS="$CFLAGS $option"
-	AC_MSG_CHECKING([whether gcc understands $option])
-	AC_TRY_COMPILE([], [],
-	    has_option=yes,
-	    has_option=no,)
-	CFLAGS="$save_CFLAGS"
-	AC_MSG_RESULT([$has_option])
-	if test $has_option = yes; then
-	    tested_warning_flags="$tested_warning_flags $option"
-	fi
-	unset has_option
-	unset save_CFLAGS
-    done
-    unset option
-    CFLAGS="$realsave_CFLAGS"
-    AC_MSG_CHECKING(what warning flags to pass to the C compiler)
-    AC_MSG_RESULT($tested_warning_flags)
-
-    AC_ARG_ENABLE(iso-c,
-                  AC_HELP_STRING([--enable-iso-c],
-                                 [Try to warn if code is not ISO C ]),,
-                  [enable_iso_c=no])
-
-    AC_MSG_CHECKING(what language compliance flags to pass to the C compiler)
-    complCFLAGS=
-    if test "x$enable_iso_c" != "xno"; then
-	if test "x$GCC" = "xyes"; then
-	case " $CFLAGS " in
-	    *[\ \	]-ansi[\ \	]*) ;;
-	    *) complCFLAGS="$complCFLAGS -ansi" ;;
-	esac
-	case " $CFLAGS " in
-	    *[\ \	]-pedantic[\ \	]*) ;;
-	    *) complCFLAGS="$complCFLAGS -pedantic" ;;
-	esac
-	fi
-    fi
-    AC_MSG_RESULT($complCFLAGS)
-
-    WARN_CFLAGS="$tested_warning_flags $complCFLAGS"
-    AC_SUBST(WARN_CFLAGS)
-])
-
-dnl For C++, do basically the same thing.
-
-AC_DEFUN([GNOME_CXX_WARNINGS],[
-  AC_ARG_ENABLE(cxx-warnings,
-                AC_HELP_STRING([--enable-cxx-warnings=@<:@no/minimum/yes@:>@]
-                               [Turn on compiler warnings.]),,
-                [enable_cxx_warnings="m4_default([$1],[minimum])"])
-
-  AC_MSG_CHECKING(what warning flags to pass to the C++ compiler)
-  warnCXXFLAGS=
-  if test "x$GXX" != xyes; then
-    enable_cxx_warnings=no
-  fi
-  if test "x$enable_cxx_warnings" != "xno"; then
-    if test "x$GXX" = "xyes"; then
-      case " $CXXFLAGS " in
-      *[\ \	]-Wall[\ \	]*) ;;
-      *) warnCXXFLAGS="-Wall -Wno-unused" ;;
-      esac
-
-      ## -W is not all that useful.  And it cannot be controlled
-      ## with individual -Wno-xxx flags, unlike -Wall
-      if test "x$enable_cxx_warnings" = "xyes"; then
-	warnCXXFLAGS="$warnCXXFLAGS -Wshadow -Woverloaded-virtual"
-      fi
-    fi
-  fi
-  AC_MSG_RESULT($warnCXXFLAGS)
-
-   AC_ARG_ENABLE(iso-cxx,
-                 AC_HELP_STRING([--enable-iso-cxx],
-                                [Try to warn if code is not ISO C++ ]),,
-                 [enable_iso_cxx=no])
-
-   AC_MSG_CHECKING(what language compliance flags to pass to the C++ compiler)
-   complCXXFLAGS=
-   if test "x$enable_iso_cxx" != "xno"; then
-     if test "x$GXX" = "xyes"; then
-      case " $CXXFLAGS " in
-      *[\ \	]-ansi[\ \	]*) ;;
-      *) complCXXFLAGS="$complCXXFLAGS -ansi" ;;
-      esac
-
-      case " $CXXFLAGS " in
-      *[\ \	]-pedantic[\ \	]*) ;;
-      *) complCXXFLAGS="$complCXXFLAGS -pedantic" ;;
-      esac
-     fi
-   fi
-  AC_MSG_RESULT($complCXXFLAGS)
-
-  WARN_CXXFLAGS="$CXXFLAGS $warnCXXFLAGS $complCXXFLAGS"
-  AC_SUBST(WARN_CXXFLAGS)
-])
-
-dnl GLIB_GSETTINGS
-dnl Defines GSETTINGS_SCHEMAS_INSTALL which controls whether
-dnl the schema should be compiled
-dnl
-
-AC_DEFUN([GLIB_GSETTINGS],
-[
-  m4_pattern_allow([AM_V_GEN])
-  AC_ARG_ENABLE(schemas-compile,
-                AS_HELP_STRING([--disable-schemas-compile],
-                               [Disable regeneration of gschemas.compiled on install]),
-                [case ${enableval} in
-                  yes) GSETTINGS_DISABLE_SCHEMAS_COMPILE=""  ;;
-                  no)  GSETTINGS_DISABLE_SCHEMAS_COMPILE="1" ;;
-                  *) AC_MSG_ERROR([bad value ${enableval} for --enable-schemas-compile]) ;;
-                 esac])
-  AC_SUBST([GSETTINGS_DISABLE_SCHEMAS_COMPILE])
-  PKG_PROG_PKG_CONFIG([0.16])
-  AC_SUBST(gsettingsschemadir, [${datadir}/glib-2.0/schemas])
-  if test x$cross_compiling != xyes; then
-    GLIB_COMPILE_SCHEMAS=`$PKG_CONFIG --variable glib_compile_schemas gio-2.0`
-  else
-    AC_PATH_PROG(GLIB_COMPILE_SCHEMAS, glib-compile-schemas)
-  fi
-  AC_SUBST(GLIB_COMPILE_SCHEMAS)
-  if test "x$GLIB_COMPILE_SCHEMAS" = "x"; then
-    ifelse([$2],,[AC_MSG_ERROR([glib-compile-schemas not found.])],[$2])
-  else
-    ifelse([$1],,[:],[$1])
-  fi
-
-  GSETTINGS_RULES='
-.PHONY : uninstall-gsettings-schemas install-gsettings-schemas clean-gsettings-schemas
-
-mostlyclean-am: clean-gsettings-schemas
-
-gsettings__enum_file = $(addsuffix .enums.xml,$(gsettings_ENUM_NAMESPACE))
-
-%.gschema.valid: %.gschema.xml $(gsettings__enum_file)
-	$(AM_V_GEN) if test -f "$<"; then d=; else d="$(srcdir)/"; fi; $(GLIB_COMPILE_SCHEMAS) --strict --dry-run $(addprefix --schema-file=,$(gsettings__enum_file)) --schema-file=$${d}$< && touch [$]@
-
-all-am: $(gsettings_SCHEMAS:.xml=.valid)
-uninstall-am: uninstall-gsettings-schemas
-install-data-am: install-gsettings-schemas
-
-.SECONDARY: $(gsettings_SCHEMAS)
-
-install-gsettings-schemas: $(gsettings_SCHEMAS) $(gsettings__enum_file)
-	@$(NORMAL_INSTALL)
-	if test -n "$^"; then \
-		test -z "$(gsettingsschemadir)" || $(MKDIR_P) "$(DESTDIR)$(gsettingsschemadir)"; \
-		$(INSTALL_DATA) $^ "$(DESTDIR)$(gsettingsschemadir)"; \
-		test -n "$(GSETTINGS_DISABLE_SCHEMAS_COMPILE)$(DESTDIR)" || $(GLIB_COMPILE_SCHEMAS) $(gsettingsschemadir); \
-	fi
-
-uninstall-gsettings-schemas:
-	@$(NORMAL_UNINSTALL)
-	@list='\''$(gsettings_SCHEMAS) $(gsettings__enum_file)'\''; test -n "$(gsettingsschemadir)" || list=; \
-	files=`for p in $$list; do echo $$p; done | sed -e '\''s|^.*/||'\''`; \
-	test -n "$$files" || exit 0; \
-	echo " ( cd '\''$(DESTDIR)$(gsettingsschemadir)'\'' && rm -f" $$files ")"; \
-	cd "$(DESTDIR)$(gsettingsschemadir)" && rm -f $$files
-	test -n "$(GSETTINGS_DISABLE_SCHEMAS_COMPILE)$(DESTDIR)" || $(GLIB_COMPILE_SCHEMAS) $(gsettingsschemadir)
-
-clean-gsettings-schemas:
-	rm -f $(gsettings_SCHEMAS:.xml=.valid) $(gsettings__enum_file)
-
-ifdef gsettings_ENUM_NAMESPACE
-$(gsettings__enum_file): $(gsettings_ENUM_FILES)
-	$(AM_V_GEN) glib-mkenums --comments '\''<!-- @comment@ -->'\'' --fhead "<schemalist>" --vhead "  <@type@ id='\''$(gsettings_ENUM_NAMESPACE).@EnumName@'\''>" --vprod "    <value nick='\''@valuenick@'\'' value='\''@valuenum@'\''/>" --vtail "  </@type@>" --ftail "</schemalist>" [$]^ > [$]@.tmp && mv [$]@.tmp [$]@
-endif
-'
-  _GSETTINGS_SUBST(GSETTINGS_RULES)
-])
-
-dnl _GSETTINGS_SUBST(VARIABLE)
-dnl Abstract macro to do either _AM_SUBST_NOTMAKE or AC_SUBST
-AC_DEFUN([_GSETTINGS_SUBST],
-[
-AC_SUBST([$1])
-m4_ifdef([_AM_SUBST_NOTMAKE], [_AM_SUBST_NOTMAKE([$1])])
-]
-)
-
-dnl -*- mode: autoconf -*-
-dnl Copyright 2009 Johan Dahlin
-dnl
-dnl This file is free software; the author(s) gives unlimited
-dnl permission to copy and/or distribute it, with or without
-dnl modifications, as long as this notice is preserved.
-dnl
-
-# serial 1
-
-m4_define([_GOBJECT_INTROSPECTION_CHECK_INTERNAL],
-[
-    AC_BEFORE([AC_PROG_LIBTOOL],[$0])dnl setup libtool first
-    AC_BEFORE([AM_PROG_LIBTOOL],[$0])dnl setup libtool first
-    AC_BEFORE([LT_INIT],[$0])dnl setup libtool first
-
-    dnl enable/disable introspection
-    m4_if([$2], [require],
-    [dnl
-        enable_introspection=yes
-    ],[dnl
-        AC_ARG_ENABLE(introspection,
-                  AS_HELP_STRING([--enable-introspection[=@<:@no/auto/yes@:>@]],
-                                 [Enable introspection for this build]),, 
-                                 [enable_introspection=auto])
-    ])dnl
-
-    AC_MSG_CHECKING([for gobject-introspection])
-
-    dnl presence/version checking
-    AS_CASE([$enable_introspection],
-    [no], [dnl
-        found_introspection="no (disabled, use --enable-introspection to enable)"
-    ],dnl
-    [yes],[dnl
-        PKG_CHECK_EXISTS([gobject-introspection-1.0],,
-                         AC_MSG_ERROR([gobject-introspection-1.0 is not installed]))
-        PKG_CHECK_EXISTS([gobject-introspection-1.0 >= $1],
-                         found_introspection=yes,
-                         AC_MSG_ERROR([You need to have gobject-introspection >= $1 installed to build AC_PACKAGE_NAME]))
-    ],dnl
-    [auto],[dnl
-        PKG_CHECK_EXISTS([gobject-introspection-1.0 >= $1], found_introspection=yes, found_introspection=no)
-	dnl Canonicalize enable_introspection
-	enable_introspection=$found_introspection
-    ],dnl
-    [dnl	
-        AC_MSG_ERROR([invalid argument passed to --enable-introspection, should be one of @<:@no/auto/yes@:>@])
-    ])dnl
-
-    AC_MSG_RESULT([$found_introspection])
-
-    INTROSPECTION_SCANNER=
-    INTROSPECTION_COMPILER=
-    INTROSPECTION_GENERATE=
-    INTROSPECTION_GIRDIR=
-    INTROSPECTION_TYPELIBDIR=
-    if test "x$found_introspection" = "xyes"; then
-       INTROSPECTION_SCANNER=`$PKG_CONFIG --variable=g_ir_scanner gobject-introspection-1.0`
-       INTROSPECTION_COMPILER=`$PKG_CONFIG --variable=g_ir_compiler gobject-introspection-1.0`
-       INTROSPECTION_GENERATE=`$PKG_CONFIG --variable=g_ir_generate gobject-introspection-1.0`
-       INTROSPECTION_GIRDIR=`$PKG_CONFIG --variable=girdir gobject-introspection-1.0`
-       INTROSPECTION_TYPELIBDIR="$($PKG_CONFIG --variable=typelibdir gobject-introspection-1.0)"
-       INTROSPECTION_CFLAGS=`$PKG_CONFIG --cflags gobject-introspection-1.0`
-       INTROSPECTION_LIBS=`$PKG_CONFIG --libs gobject-introspection-1.0`
-       INTROSPECTION_MAKEFILE=`$PKG_CONFIG --variable=datadir gobject-introspection-1.0`/gobject-introspection-1.0/Makefile.introspection
-    fi
-    AC_SUBST(INTROSPECTION_SCANNER)
-    AC_SUBST(INTROSPECTION_COMPILER)
-    AC_SUBST(INTROSPECTION_GENERATE)
-    AC_SUBST(INTROSPECTION_GIRDIR)
-    AC_SUBST(INTROSPECTION_TYPELIBDIR)
-    AC_SUBST(INTROSPECTION_CFLAGS)
-    AC_SUBST(INTROSPECTION_LIBS)
-    AC_SUBST(INTROSPECTION_MAKEFILE)
-
-    AM_CONDITIONAL(HAVE_INTROSPECTION, test "x$found_introspection" = "xyes")
-])
+# PKG_INSTALLDIR(DIRECTORY)
+# -------------------------
+# Substitutes the variable pkgconfigdir as the location where a module
+# should install pkg-config .pc files. By default the directory is
+# $libdir/pkgconfig, but the default can be changed by passing
+# DIRECTORY. The user can override through the --with-pkgconfigdir
+# parameter.
+AC_DEFUN([PKG_INSTALLDIR],
+[m4_pushdef([pkg_default], [m4_default([$1], ['${libdir}/pkgconfig'])])
+m4_pushdef([pkg_description],
+    [pkg-config installation directory @<:@]pkg_default[@:>@])
+AC_ARG_WITH([pkgconfigdir],
+    [AS_HELP_STRING([--with-pkgconfigdir], pkg_description)],,
+    [with_pkgconfigdir=]pkg_default)
+AC_SUBST([pkgconfigdir], [$with_pkgconfigdir])
+m4_popdef([pkg_default])
+m4_popdef([pkg_description])
+]) dnl PKG_INSTALLDIR
 
 
-dnl Usage:
-dnl   GOBJECT_INTROSPECTION_CHECK([minimum-g-i-version])
+# PKG_NOARCH_INSTALLDIR(DIRECTORY)
+# -------------------------
+# Substitutes the variable noarch_pkgconfigdir as the location where a
+# module should install arch-independent pkg-config .pc files. By
+# default the directory is $datadir/pkgconfig, but the default can be
+# changed by passing DIRECTORY. The user can override through the
+# --with-noarch-pkgconfigdir parameter.
+AC_DEFUN([PKG_NOARCH_INSTALLDIR],
+[m4_pushdef([pkg_default], [m4_default([$1], ['${datadir}/pkgconfig'])])
+m4_pushdef([pkg_description],
+    [pkg-config arch-independent installation directory @<:@]pkg_default[@:>@])
+AC_ARG_WITH([noarch-pkgconfigdir],
+    [AS_HELP_STRING([--with-noarch-pkgconfigdir], pkg_description)],,
+    [with_noarch_pkgconfigdir=]pkg_default)
+AC_SUBST([noarch_pkgconfigdir], [$with_noarch_pkgconfigdir])
+m4_popdef([pkg_default])
+m4_popdef([pkg_description])
+]) dnl PKG_NOARCH_INSTALLDIR
 
-AC_DEFUN([GOBJECT_INTROSPECTION_CHECK],
-[
-  _GOBJECT_INTROSPECTION_CHECK_INTERNAL([$1])
-])
 
-dnl Usage:
-dnl   GOBJECT_INTROSPECTION_REQUIRE([minimum-g-i-version])
+# PKG_CHECK_VAR(VARIABLE, MODULE, CONFIG-VARIABLE,
+# [ACTION-IF-FOUND], [ACTION-IF-NOT-FOUND])
+# -------------------------------------------
+# Retrieves the value of the pkg-config variable for the given module.
+AC_DEFUN([PKG_CHECK_VAR],
+[AC_REQUIRE([PKG_PROG_PKG_CONFIG])dnl
+AC_ARG_VAR([$1], [value of $3 for $2, overriding pkg-config])dnl
 
+_PKG_CONFIG([$1], [variable="][$3]["], [$2])
+AS_VAR_COPY([$1], [pkg_cv_][$1])
 
-AC_DEFUN([GOBJECT_INTROSPECTION_REQUIRE],
-[
-  _GOBJECT_INTROSPECTION_CHECK_INTERNAL([$1], [require])
-])
+AS_VAR_IF([$1], [""], [$5], [$4])dnl
+])# PKG_CHECK_VAR
 
 AC_DEFUN([YELP_HELP_INIT],
 [
@@ -796,8 +848,24 @@ AC_REQUIRE([AC_PROG_LN_S])
 m4_pattern_allow([AM_V_at])
 m4_pattern_allow([AM_V_GEN])
 m4_pattern_allow([AM_DEFAULT_VERBOSITY])
+
+YELP_LC_MEDIA_LINKS=true
+YELP_LC_DIST=true
+
+for yelpopt in [$1]; do
+  case $yelpopt in
+    lc-media-links)    YELP_LC_MEDIA_LINKS=true ;;
+    no-lc-media-links) YELP_LC_MEDIA_LINKS= ;;
+    lc-dist)           YELP_LC_DIST=true ;;
+    no-lc-dist)        YELP_LC_DIST= ;;
+    *) AC_MSG_ERROR([Unrecognized [YELP_HELP_INIT] option $yelpopt"]) ;;
+  esac
+done;
+AC_SUBST([YELP_LC_MEDIA_LINKS])
+AC_SUBST([YELP_LC_DIST])
+
 AC_ARG_WITH([help-dir],
-            AC_HELP_STRING([--with-help-dir=DIR],
+            AS_HELP_STRING([--with-help-dir=DIR],
                            [path where help files are installed]),,
             [with_help_dir='${datadir}/help'])
 HELP_DIR="$with_help_dir"
@@ -890,13 +958,13 @@ clean-help:
 
 EXTRA_DIST ?=
 EXTRA_DIST += $(_HELP_C_EXTRA) $(_HELP_C_MEDIA)
-EXTRA_DIST += $(foreach lc,$(HELP_LINGUAS),$(lc)/$(lc).stamp)
+EXTRA_DIST += $(if $(YELP_LC_DIST),$(foreach lc,$(HELP_LINGUAS),$(lc)/$(lc).stamp))
 EXTRA_DIST += $(foreach lc,$(HELP_LINGUAS),$(lc)/$(lc).po)
 EXTRA_DIST += $(foreach f,$(HELP_MEDIA),$(foreach lc,$(HELP_LINGUAS),$(wildcard $(lc)/$(f))))
 
 distdir: distdir-help-files
 distdir-help-files:
-	@for lc in C $(HELP_LINGUAS); do \
+	@for lc in C $(if $(YELP_LC_DIST),$(HELP_LINGUAS)) ; do \
 	  $(MKDIR_P) "$(distdir)/$$lc"; \
 	  for file in $(HELP_FILES); do \
 	    if test -f "$$lc/$$file"; then d=./; else d=$(srcdir)/; fi; \
@@ -954,8 +1022,10 @@ install-help:
 	      echo "$(INSTALL_DATA) $$d$$lc/$$f $$helpdir$$f"; \
 	      $(INSTALL_DATA) "$$d$$lc/$$f" "$$helpdir$$f" || exit 1; \
 	    elif test "x$$lc" != "xC"; then \
-	      echo "$(LN_S) -f $(HELP_DIR)/C/$(HELP_ID)/$$f $$helpdir$$f"; \
-	      $(LN_S) -f "$(HELP_DIR)/C/$(HELP_ID)/$$f" "$$helpdir$$f" || exit 1; \
+	      if test "x$(YELP_LC_MEDIA_LINKS)" != "x"; then \
+	        echo "$(LN_S) -f $(HELP_DIR)/C/$(HELP_ID)/$$f $$helpdir$$f"; \
+	        $(LN_S) -f "$(HELP_DIR)/C/$(HELP_ID)/$$f" "$$helpdir$$f" || exit 1; \
+	      fi; \
 	    fi; \
 	  done; \
 	done
@@ -1001,7 +1071,7 @@ AC_DEFUN([AM_AUTOMAKE_VERSION],
 [am__api_version='1.14'
 dnl Some users find AM_AUTOMAKE_VERSION and mistake it for a way to
 dnl require some minimum version.  Point them to the right macro.
-m4_if([$1], [1.14], [],
+m4_if([$1], [1.14.1], [],
       [AC_FATAL([Do not call $0, use AM_INIT_AUTOMAKE([$1]).])])dnl
 ])
 
@@ -1017,7 +1087,7 @@ m4_define([_AM_AUTOCONF_VERSION], [])
 # Call AM_AUTOMAKE_VERSION and AM_AUTOMAKE_VERSION so they can be traced.
 # This function is AC_REQUIREd by AM_INIT_AUTOMAKE.
 AC_DEFUN([AM_SET_CURRENT_AUTOMAKE_VERSION],
-[AM_AUTOMAKE_VERSION([1.14])dnl
+[AM_AUTOMAKE_VERSION([1.14.1])dnl
 m4_ifndef([AC_AUTOCONF_VERSION],
   [m4_copy([m4_PACKAGE_VERSION], [AC_AUTOCONF_VERSION])])dnl
 _AM_AUTOCONF_VERSION(m4_defn([AC_AUTOCONF_VERSION]))])
