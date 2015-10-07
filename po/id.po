@@ -1,23 +1,22 @@
-# German translation for d-feet.
-# Copyright (C) 2013 d-feet's COPYRIGHT HOLDER
+# Indonesian translation for d-feet.
+# Copyright (C) 2014 d-feet's COPYRIGHT HOLDER
 # This file is distributed under the same license as the d-feet package.
-# Christian Kirbach <christian.kirbach@gmail.com>, 2013.
+# Andika Triwidada <andika@gmail.com>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: d-feet master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=d-"
 "feet&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-08-08 03:08+0000\n"
-"PO-Revision-Date: 2014-08-14 13:08+0100\n"
-"Last-Translator: Christian Kirbach <christian.kirbach@gmail.com>\n"
-"Language-Team: Deutsch <gnome-de@gnome.org>\n"
-"Language: de\n"
+"POT-Creation-Date: 2014-10-11 07:28+0000\n"
+"PO-Revision-Date: 2014-10-16 14:19+0700\n"
+"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
+"Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: ../data/d-feet.appdata.xml.in.h:1
 msgid ""
@@ -25,10 +24,9 @@ msgid ""
 "be used to inspect D-Bus interfaces of running programs and invoke methods "
 "on those interfaces."
 msgstr ""
-"Eine einfache Anwendung zur Fehlerdiagnose von D-Bus, einer Software zur "
-"Interprozesskommunikation (IPC). D-Feet kann zur Untersuchung von D-Bus-"
-"Schnittstellen laufender Programme verwendet werden und Methoden dieser "
-"Schnittstellen aufrufen."
+"Suatu aplikasi sederhana untuk mengawakutu sistem bus pesan D-Bus. D-Feet "
+"dapat dipakai untuk memeriksa antar muka D-Bus dari program-program yang "
+"berjalan dan memanggil metode-metode pada antar muka tersebut."
 
 #: ../data/d-feet.desktop.in.in.h:1
 msgid "D-Feet"
@@ -36,84 +34,84 @@ msgstr "D-Feet"
 
 #: ../data/d-feet.desktop.in.in.h:2
 msgid "D-Bus Debugger"
-msgstr "D-Bus-Fehlerdiagnose"
+msgstr "Pengawakutu D-Bus"
 
 #: ../data/d-feet.desktop.in.in.h:3
 msgid "Debug D-Bus applications"
-msgstr "Fehlerdiagnose für D-Bus-Anwendungen"
+msgstr "Mengawakutu aplikasi-aplikasi D-Bus"
 
 #: ../data/d-feet.desktop.in.in.h:4
 msgid "debug;d-bus;dbus;dfeet;"
-msgstr "debug;d-bus;dbus;dfeet;"
+msgstr "debug;d-bus;dbus;dfeet;awakutu;"
 
 #: ../data/ui/addconnectiondialog.ui.h:1
 msgid "Add a Connection"
-msgstr "Eine Verbindung hinzufügen"
+msgstr "Tambah Koneksi"
 
 #: ../data/ui/addconnectiondialog.ui.h:2
 msgid "See http://dbus.freedesktop.org/doc/dbus-specification.html#addresses"
 msgstr ""
-"Lesen Sie http://dbus.freedesktop.org/doc/dbus-specification.html#addresses"
+"Lihat http://dbus.freedesktop.org/doc/dbus-specification.html#addresses"
 
 #: ../data/ui/addconnectiondialog.ui.h:3 ../data/ui/introspection.ui.h:3
 msgid "Address:"
-msgstr "Adresse:"
+msgstr "Alamat:"
 
 #: ../data/ui/app-menu.ui.h:1
 msgid "About"
-msgstr "Info"
+msgstr "Tentang"
 
 #: ../data/ui/app-menu.ui.h:2
 msgid "Help"
-msgstr "Hilfe"
+msgstr "Bantuan"
 
 #: ../data/ui/app-menu.ui.h:3
 msgid "Quit"
-msgstr "Schließen"
+msgstr "Keluar"
 
 #: ../data/ui/executedialog.ui.h:1
 msgid "Execute D-Bus Method"
-msgstr "D-Bus-Methode ausführen"
+msgstr "Mengeksekusi Metoda D-Bus"
 
 #: ../data/ui/executedialog.ui.h:2
 msgid "_Execute"
-msgstr "_Ausführen"
+msgstr "_Eksekusi"
 
 #: ../data/ui/executedialog.ui.h:3
 msgid "Method name:"
-msgstr "Methodenname:"
+msgstr "Nama metode:"
 
 #: ../data/ui/executedialog.ui.h:4
 msgid "Object Path:"
-msgstr "Objektpfad:"
+msgstr "Path Objek:"
 
 #: ../data/ui/executedialog.ui.h:5
 msgid "Interface:"
-msgstr "Schnittstelle:"
+msgstr "Antar Muka:"
 
 #: ../data/ui/executedialog.ui.h:6
 msgid "Method input"
-msgstr "Eingabemethode"
+msgstr "Masukan metoda"
 
 #: ../data/ui/executedialog.ui.h:7
 msgid "Method output"
-msgstr "Ausgabemethode"
+msgstr "Keluaran metoda"
 
 #: ../data/ui/executedialog.ui.h:8
 msgid "Pretty print"
-msgstr "Formatiert ausgeben"
+msgstr "Cetak cantik"
 
 #: ../data/ui/executedialog.ui.h:9
 msgid "Source"
-msgstr "Quelle"
+msgstr "Sumber"
 
 #: ../data/ui/executedialog.ui.h:10
 msgid "Method execution"
-msgstr "Methodenausführung"
+msgstr "Eksekusi metode"
 
 #: ../data/ui/executedialog.ui.h:11
 msgid "Number of method executions"
-msgstr "Anzahl der Methodenausführungen"
+msgstr "Cacah eksekusi metode"
 
 #: ../data/ui/executedialog.ui.h:12
 msgid "Ø:"
@@ -121,7 +119,7 @@ msgstr "Ø:"
 
 #: ../data/ui/executedialog.ui.h:13
 msgid "Average method execution time in seconds"
-msgstr "Durchschnittliche Methodenausführungszeit in Sekunden"
+msgstr "Rerata waktu eksekusi metode dalam detik"
 
 #: ../data/ui/executedialog.ui.h:14
 msgid "Min:"
@@ -129,59 +127,44 @@ msgstr "Min:"
 
 #: ../data/ui/executedialog.ui.h:15
 msgid "Minimal method execution time in seconds"
-msgstr "Kürzeste Methodenausführungszeit in Sekunden"
+msgstr "Minimum waktu eksekusi metode dalam detik"
 
 #: ../data/ui/executedialog.ui.h:16
 msgid "Max:"
-msgstr "Max:"
+msgstr "Maks:"
 
 #: ../data/ui/executedialog.ui.h:17
 msgid "Maximal method execution time in seconds"
-msgstr "Längste Methodenausführungszeit in Sekunden"
+msgstr "Maksimum waktu eksekusi metode dalam detik"
 
 #: ../data/ui/introspection.ui.h:1
 msgid "Unique name:"
-msgstr "Eindeutiger Name:"
+msgstr "Nama unik:"
 
 #: ../data/ui/introspection.ui.h:2
 msgid "Name:"
-msgstr "Name:"
+msgstr "Nama:"
 
 #: ../data/ui/introspection.ui.h:4
 msgid "Introspecting..."
-msgstr "Prüfen …"
+msgstr "Mengintrospeksi…"
 
 #: ../data/ui/introspection.ui.h:5
 msgid "Object path"
-msgstr "Objektpfad"
+msgstr "Path objek"
 
 #: ../data/ui/mainwindow.ui.h:1
 msgid "Connect to System Bus"
-msgstr "Mit Systembus verbinden"
+msgstr "Menyambung ke Bus Sistem"
 
 #: ../data/ui/mainwindow.ui.h:2
 msgid "Connect to Session Bus"
-msgstr "Mit Sitzungsbus verbinden"
+msgstr "Menyambung ke Bus Sesi"
 
 #: ../data/ui/mainwindow.ui.h:3
 msgid "Connect to other Bus"
-msgstr "Mit anderem Bus verbinden"
+msgstr "Menyambung ke Bus lain"
 
 #: ../data/ui/mainwindow.ui.h:4
 msgid "Close Bus"
-msgstr "Bus schließen"
-
-#~ msgid "Filter:"
-#~ msgstr "Filter:"
-
-#~ msgid "unique bus name"
-#~ msgstr "Eindeutiger Busname"
-
-#~ msgid "Command line:"
-#~ msgstr "Befehlszeile:"
-
-#~ msgid "Process ID:"
-#~ msgstr "Prozess-Kennung:"
-
-#~ msgid "File"
-#~ msgstr "Datei"
+msgstr "Tutup Bus"

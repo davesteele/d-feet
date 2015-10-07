@@ -80,7 +80,7 @@ AC_DEFUN([GNOME_COMPILE_WARNINGS],[
 
     case "$enable_compile_warnings" in
     no)
-        warning_flags=
+        warning_flags="-w"
         ;;
     minimum)
         warning_flags="-Wall"
@@ -595,7 +595,7 @@ AC_DEFUN([GOBJECT_INTROSPECTION_REQUIRE],
 ])
 
 # nls.m4 serial 5 (gettext-0.18)
-dnl Copyright (C) 1995-2003, 2005-2006, 2008-2013 Free Software Foundation,
+dnl Copyright (C) 1995-2003, 2005-2006, 2008-2014 Free Software Foundation,
 dnl Inc.
 dnl This file is free software; the Free Software Foundation
 dnl gives unlimited permission to copy and/or distribute it,
@@ -963,7 +963,7 @@ EXTRA_DIST += $(foreach lc,$(HELP_LINGUAS),$(lc)/$(lc).po)
 EXTRA_DIST += $(foreach f,$(HELP_MEDIA),$(foreach lc,$(HELP_LINGUAS),$(wildcard $(lc)/$(f))))
 
 distdir: distdir-help-files
-distdir-help-files:
+distdir-help-files: $(_HELP_LC_FILES)
 	@for lc in C $(if $(YELP_LC_DIST),$(HELP_LINGUAS)) ; do \
 	  $(MKDIR_P) "$(distdir)/$$lc"; \
 	  for file in $(HELP_FILES); do \
@@ -992,7 +992,7 @@ check-help:
 
 .PHONY: install-help
 install-data-am: $(if $(HELP_ID),install-help)
-install-help:
+install-help: $(_HELP_LC_FILES)
 	@for lc in C $(_HELP_LINGUAS); do \
 	  $(mkinstalldirs) "$(DESTDIR)$(HELP_DIR)/$$lc/$(HELP_ID)" || exit 1; \
 	done
@@ -1139,10 +1139,9 @@ _AM_AUTOCONF_VERSION(m4_defn([AC_AUTOCONF_VERSION]))])
 # configured tree to be moved without reconfiguration.
 
 AC_DEFUN([AM_AUX_DIR_EXPAND],
-[dnl Rely on autoconf to set up CDPATH properly.
-AC_PREREQ([2.50])dnl
-# expand $ac_aux_dir to an absolute path
-am_aux_dir=`cd $ac_aux_dir && pwd`
+[AC_REQUIRE([AC_CONFIG_AUX_DIR_DEFAULT])dnl
+# Expand $ac_aux_dir to an absolute path.
+am_aux_dir=`cd "$ac_aux_dir" && pwd`
 ])
 
 # AM_CONDITIONAL                                            -*- Autoconf -*-
@@ -1609,7 +1608,8 @@ to "yes", and re-run configure.
 END
     AC_MSG_ERROR([Your 'rm' program is bad, sorry.])
   fi
-fi])
+fi
+])
 
 dnl Hook into '_AC_COMPILER_EXEEXT' early to learn its expansion.  Do not
 dnl add the conditional right here, as _AC_COMPILER_EXEEXT may be further
