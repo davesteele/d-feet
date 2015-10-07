@@ -5,6 +5,8 @@ d-feet (0.3.10-1) UNRELEASED; urgency=medium
     - debian/patches/01-add-missing-appdata-in-file.patch
     - debian/patches/02-make-pep8-happy.patch
   * Use unnumbered patches to avoid unnecessary noise on rebase.
+  * Hard code the python binary path in /usr/bin/d-feet. CDBS sets PYTHON to
+    the binary name, not the full path which breaks the shebang.
 
  -- Michael Biebl <biebl@debian.org>  Wed, 07 Oct 2015 19:50:21 +0200
 

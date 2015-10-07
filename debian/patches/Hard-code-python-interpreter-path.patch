@@ -1,0 +1,21 @@
+From: Michael Biebl <biebl@debian.org>
+Date: Wed, 7 Oct 2015 20:23:08 +0200
+Subject: Hard-code python interpreter path.
+
+@PYTHON@ is not necessarily set to the full path but can contain only
+the binary name, which breaks the shebang.
+So hard-code the path instead.
+---
+ src/d-feet.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/d-feet.in b/src/d-feet.in
+index d5e7d5b..733810b 100644
+--- a/src/d-feet.in
++++ b/src/d-feet.in
+@@ -1,4 +1,4 @@
+-#!@PYTHON@
++#!/usr/bin/python
+ # -*- coding: utf-8 -*-
+ 
+ # Copyright (C) 2013 Thomas Bechtold <thomasbechtold@jpberlin.de>
