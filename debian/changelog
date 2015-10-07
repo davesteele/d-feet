@@ -4,6 +4,7 @@ d-feet (0.3.10-1) UNRELEASED; urgency=medium
   * Drop patches which have been applied upstream:
     - debian/patches/01-add-missing-appdata-in-file.patch
     - debian/patches/02-make-pep8-happy.patch
+  * Use unnumbered patches to avoid unnecessary noise on rebase.
 
  -- Michael Biebl <biebl@debian.org>  Wed, 07 Oct 2015 19:50:21 +0200
 

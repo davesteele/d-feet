@@ -1,2 +1,2 @@
-03-disable-dbus-tests.patch
-04-Ignore-pep8-E402-error.patch
+Disable-dbus-tests.patch
+Ignore-pep8-E402-error.patch

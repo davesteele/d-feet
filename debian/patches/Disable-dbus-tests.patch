@@ -1,6 +1,17 @@
+From: Thomas Bechtold <thomasbechtold@jpberlin.de>
+Date: Sat, 25 May 2013 08:35:01 +0200
+Subject: Disable dbus tests
+
+Disable tests which need systembus and sessionbus
+---
+ src/tests/tests.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/src/tests/tests.py b/src/tests/tests.py
+index f0851ac..1fb5359 100755
 --- a/src/tests/tests.py
 +++ b/src/tests/tests.py
-@@ -91,9 +91,9 @@
+@@ -91,9 +91,9 @@ class AddressInfoTest(unittest.TestCase):
      def tearDown(self):
          self.bus.stop()
  
