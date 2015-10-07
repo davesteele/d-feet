@@ -1,4 +1,2 @@
-01-add-missing-appdata-in-file.patch
-02-make-pep8-happy.patch
 03-disable-dbus-tests.patch
 04-Ignore-pep8-E402-error.patch
