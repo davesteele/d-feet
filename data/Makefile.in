@@ -343,7 +343,7 @@ appdata_in_files = d-feet.appdata.xml.in
 EXTRA_DIST = \
 	$(desktop_in_files)	\
 	$(gsettings_SCHEMAS)	\
-	$(appdata_DATA)
+	$(appdata_in_files)
 
 CLEANFILES = \
 	$(DESKTOP_FILES)	\

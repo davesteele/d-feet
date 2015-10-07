@@ -1,20 +1,21 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2013 Thomas Bechtold <thomasbechtold@jpberlin.de>
+# copyright (C) 2013 Thomas Bechtold <thomasbechtold@jpberlin.de>
 
 # This file is part of D-Feet.
 
-# D-Feet is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
 
-# D-Feet is distributed in the hope that it will be useful,
+# This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 
 # You should have received a copy of the GNU General Public License
-# along with D-Feet.  If not, see <http://www.gnu.org/licenses/>.
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 from gi.repository import GObject, Gtk, Gio
 
@@ -42,11 +43,11 @@ class DFeetWindow(Gtk.ApplicationWindow):
         self.session_bus = None
         self.system_bus = None
 
-        #setup the window
+        # setup the window
         self.set_default_size(600, 480)
         self.set_icon_name(package)
 
-        #create actions
+        # create actions
         action = Gio.SimpleAction.new('connect-system-bus', None)
         action.connect('activate', self.__action_connect_system_bus_cb)
         self.add_action(action)
@@ -59,13 +60,13 @@ class DFeetWindow(Gtk.ApplicationWindow):
         action.connect('activate', self.__action_connect_other_bus_cb)
         self.add_action(action)
 
-        #get settings
+        # get settings
         settings = Settings.get_instance()
         self.connect('delete-event', self.__delete_cb)
         self.set_default_size(int(settings.general['windowwidth']),
                               int(settings.general['windowheight']))
 
-        #setup ui
+        # setup ui
         ui = UILoader(self.data_dir, UILoader.UI_MAINWINDOW)
         header = ui.get_widget('headerbar')
         self.set_titlebar(header)
@@ -75,13 +76,13 @@ class DFeetWindow(Gtk.ApplicationWindow):
         self.__stack_child_removed_id = self.stack.connect('remove', self.__stack_child_removed_cb)
         self.connect('destroy', self.__on_destroy)
 
-        #create bus history list and load entries from settings
+        # create bus history list and load entries from settings
         self.__bus_history = []
         for bus in settings.general['addbus_list']:
             if bus != '':
                 self.__bus_history.append(bus)
 
-        #add a System and Session Bus tab
+        # add a System and Session Bus tab
         self.activate_action('connect-system-bus', None)
         self.activate_action('connect-session-bus', None)
 

@@ -1,23 +1,22 @@
-# German translation for d-feet.
-# Copyright (C) 2013 d-feet's COPYRIGHT HOLDER
-# This file is distributed under the same license as the d-feet package.
-# Christian Kirbach <christian.kirbach@gmail.com>, 2013.
+# Danish translation of gnome-chat
+# Copyright (C) 2014 gnome-chat developers
+# This file is distributed under the same license as the gnome-chat package.
 #
+# Klaus Rasmussen <claudius@gmx.co.uk>, 2014.
 msgid ""
 msgstr ""
-"Project-Id-Version: d-feet master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=d-"
-"feet&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-08-08 03:08+0000\n"
-"PO-Revision-Date: 2014-08-14 13:08+0100\n"
-"Last-Translator: Christian Kirbach <christian.kirbach@gmail.com>\n"
-"Language-Team: Deutsch <gnome-de@gnome.org>\n"
-"Language: de\n"
+"Project-Id-Version: d-feet\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-06 10:28+0200\n"
+"PO-Revision-Date: 2014-04-26 14:48+0200\n"
+"Last-Translator: Klaus Rasmussen <claudius@gmx.co.uk>\n"
+"Language-Team: dansk <dansk@dansk-gruppen.dk>\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../data/d-feet.appdata.xml.in.h:1
 msgid ""
@@ -25,10 +24,9 @@ msgid ""
 "be used to inspect D-Bus interfaces of running programs and invoke methods "
 "on those interfaces."
 msgstr ""
-"Eine einfache Anwendung zur Fehlerdiagnose von D-Bus, einer Software zur "
-"Interprozesskommunikation (IPC). D-Feet kann zur Untersuchung von D-Bus-"
-"Schnittstellen laufender Programme verwendet werden und Methoden dieser "
-"Schnittstellen aufrufen."
+"Et simpelt program til fejlsøgning af meddelelsesbussystemet D-Bus. D-Feet "
+"kan bruges til inspicere D-Bus grænseflader af kørende programmer og kalde "
+"metoder hos disse grænseflader."
 
 #: ../data/d-feet.desktop.in.in.h:1
 msgid "D-Feet"
@@ -36,24 +34,24 @@ msgstr "D-Feet"
 
 #: ../data/d-feet.desktop.in.in.h:2
 msgid "D-Bus Debugger"
-msgstr "D-Bus-Fehlerdiagnose"
+msgstr "D-Bus-fejlsøger"
 
 #: ../data/d-feet.desktop.in.in.h:3
 msgid "Debug D-Bus applications"
-msgstr "Fehlerdiagnose für D-Bus-Anwendungen"
+msgstr "Fejlsøg D-Bus-programmer"
 
 #: ../data/d-feet.desktop.in.in.h:4
+#, fuzzy
 msgid "debug;d-bus;dbus;dfeet;"
-msgstr "debug;d-bus;dbus;dfeet;"
+msgstr "fejlsøg;d-bus;"
 
 #: ../data/ui/addconnectiondialog.ui.h:1
 msgid "Add a Connection"
-msgstr "Eine Verbindung hinzufügen"
+msgstr "Tilføj en forbindelse"
 
 #: ../data/ui/addconnectiondialog.ui.h:2
 msgid "See http://dbus.freedesktop.org/doc/dbus-specification.html#addresses"
-msgstr ""
-"Lesen Sie http://dbus.freedesktop.org/doc/dbus-specification.html#addresses"
+msgstr "Se http://dbus.freedesktop.org/doc/dbus-specification.html#addresses"
 
 #: ../data/ui/addconnectiondialog.ui.h:3 ../data/ui/introspection.ui.h:3
 msgid "Address:"
@@ -61,127 +59,115 @@ msgstr "Adresse:"
 
 #: ../data/ui/app-menu.ui.h:1
 msgid "About"
-msgstr "Info"
+msgstr "Om"
 
 #: ../data/ui/app-menu.ui.h:2
 msgid "Help"
-msgstr "Hilfe"
+msgstr "Hjælp"
 
 #: ../data/ui/app-menu.ui.h:3
 msgid "Quit"
-msgstr "Schließen"
+msgstr "Afslut"
 
 #: ../data/ui/executedialog.ui.h:1
 msgid "Execute D-Bus Method"
-msgstr "D-Bus-Methode ausführen"
+msgstr "Kald D-Bus-metode"
 
 #: ../data/ui/executedialog.ui.h:2
 msgid "_Execute"
-msgstr "_Ausführen"
+msgstr "_Kald"
 
 #: ../data/ui/executedialog.ui.h:3
 msgid "Method name:"
-msgstr "Methodenname:"
+msgstr "Metodenavn:"
 
 #: ../data/ui/executedialog.ui.h:4
 msgid "Object Path:"
-msgstr "Objektpfad:"
+msgstr "Objektsti:"
 
 #: ../data/ui/executedialog.ui.h:5
 msgid "Interface:"
-msgstr "Schnittstelle:"
+msgstr "Grænseflade:"
 
 #: ../data/ui/executedialog.ui.h:6
 msgid "Method input"
-msgstr "Eingabemethode"
+msgstr "Metodeinddata"
 
 #: ../data/ui/executedialog.ui.h:7
 msgid "Method output"
-msgstr "Ausgabemethode"
+msgstr "Metodeuddata"
 
 #: ../data/ui/executedialog.ui.h:8
 msgid "Pretty print"
-msgstr "Formatiert ausgeben"
+msgstr "læsevenlig udskrift"
 
 #: ../data/ui/executedialog.ui.h:9
 msgid "Source"
-msgstr "Quelle"
+msgstr "Kilde"
 
 #: ../data/ui/executedialog.ui.h:10
 msgid "Method execution"
-msgstr "Methodenausführung"
+msgstr "Metodeudførsel"
 
 #: ../data/ui/executedialog.ui.h:11
 msgid "Number of method executions"
-msgstr "Anzahl der Methodenausführungen"
+msgstr "Antal metodeudførsler"
 
+# Noter:
+# Tilføj note
+# forslag: tom
 #: ../data/ui/executedialog.ui.h:12
 msgid "Ø:"
 msgstr "Ø:"
 
 #: ../data/ui/executedialog.ui.h:13
 msgid "Average method execution time in seconds"
-msgstr "Durchschnittliche Methodenausführungszeit in Sekunden"
+msgstr "Gennemsnitlig metodeudførselstid i sekunder"
 
 #: ../data/ui/executedialog.ui.h:14
 msgid "Min:"
-msgstr "Min:"
+msgstr "Minimum:"
 
 #: ../data/ui/executedialog.ui.h:15
 msgid "Minimal method execution time in seconds"
-msgstr "Kürzeste Methodenausführungszeit in Sekunden"
+msgstr "Mindste metodeudførselstid i sekunder"
 
 #: ../data/ui/executedialog.ui.h:16
 msgid "Max:"
-msgstr "Max:"
+msgstr "Maximum:"
 
 #: ../data/ui/executedialog.ui.h:17
 msgid "Maximal method execution time in seconds"
-msgstr "Längste Methodenausführungszeit in Sekunden"
+msgstr "Maximale metodeudførselstid i sekunder"
 
 #: ../data/ui/introspection.ui.h:1
 msgid "Unique name:"
-msgstr "Eindeutiger Name:"
+msgstr "Éntydigt navn:"
 
 #: ../data/ui/introspection.ui.h:2
 msgid "Name:"
-msgstr "Name:"
+msgstr "Navn:"
 
 #: ../data/ui/introspection.ui.h:4
 msgid "Introspecting..."
-msgstr "Prüfen …"
+msgstr "Undersøger egentilstand..."
 
 #: ../data/ui/introspection.ui.h:5
 msgid "Object path"
-msgstr "Objektpfad"
+msgstr "Objektsti"
 
 #: ../data/ui/mainwindow.ui.h:1
 msgid "Connect to System Bus"
-msgstr "Mit Systembus verbinden"
+msgstr "Forbind til systembus"
 
 #: ../data/ui/mainwindow.ui.h:2
 msgid "Connect to Session Bus"
-msgstr "Mit Sitzungsbus verbinden"
+msgstr "Forbind til sessionsbus"
 
 #: ../data/ui/mainwindow.ui.h:3
 msgid "Connect to other Bus"
-msgstr "Mit anderem Bus verbinden"
+msgstr "Forbind til anden bus"
 
 #: ../data/ui/mainwindow.ui.h:4
 msgid "Close Bus"
-msgstr "Bus schließen"
-
-#~ msgid "Filter:"
-#~ msgstr "Filter:"
-
-#~ msgid "unique bus name"
-#~ msgstr "Eindeutiger Busname"
-
-#~ msgid "Command line:"
-#~ msgstr "Befehlszeile:"
-
-#~ msgid "Process ID:"
-#~ msgstr "Prozess-Kennung:"
-
-#~ msgid "File"
-#~ msgstr "Datei"
+msgstr "Luk bus"

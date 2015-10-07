@@ -1,9 +1,9 @@
 AC_PREREQ([2.64])
 AC_INIT([d-feet],
-	[0.3.9],
+	[0.3.10],
 	[http://bugzilla.gnome.org/enter_bug.cgi?product=d-feet],
         [d-feet],
-        [http://wiki.gnome.org/DFeet])
+        [https://wiki.gnome.org/Apps/DFeet])
 
 AM_INIT_AUTOMAKE([1.11 -Wall foreign no-define tar-ustar no-dist-gzip dist-xz])
 
