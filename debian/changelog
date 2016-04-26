@@ -4,6 +4,7 @@ d-feet (0.3.11-1) UNRELEASED; urgency=medium
   * Drop patches which have been applied upstream:
     - debian/patches/Don-t-use-Wnck-to-get-app-icons-under-non-X11.patch
     - debian/patches/Ignore-pep8-E402-error.patch
+  * Bump debhelper compatibility level to 9.
 
  -- Michael Biebl <biebl@debian.org>  Wed, 27 Apr 2016 01:15:06 +0200
 
