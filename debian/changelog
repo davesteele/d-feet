@@ -1,4 +1,4 @@
-d-feet (0.3.11-1) UNRELEASED; urgency=medium
+d-feet (0.3.11-1) unstable; urgency=medium
 
   * New upstream release.
   * Drop patches which have been applied upstream:
@@ -7,7 +7,7 @@ d-feet (0.3.11-1) UNRELEASED; urgency=medium
   * Bump debhelper compatibility level to 9.
   * Convert from cdbs to dh.
 
- -- Michael Biebl <biebl@debian.org>  Wed, 27 Apr 2016 01:15:06 +0200
+ -- Michael Biebl <biebl@debian.org>  Wed, 27 Apr 2016 01:37:40 +0200
 
 d-feet (0.3.10-2) unstable; urgency=medium
 
