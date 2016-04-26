@@ -1,4 +1,2 @@
 Disable-dbus-tests.patch
-Ignore-pep8-E402-error.patch
 Hard-code-python-interpreter-path.patch
-Don-t-use-Wnck-to-get-app-icons-under-non-X11.patch
