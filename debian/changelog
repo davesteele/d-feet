@@ -32,7 +32,7 @@ d-feet (0.3.9-2) unstable; urgency=medium
 
   * Team upload
   * Make PEP8 happy, again. Patch from upstream git. (Closes: #797398)
-  * Cadebian/patches/02-make-pep8-happy.patchnonicalize Vcs-Git
+  * Canonicalize Vcs-Git
   * Use https and cgit for Vcs-Browser
   * Standards-Version: 3.9.6 (no changes)
   * Add dh-python to Build-Depends
