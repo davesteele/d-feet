@@ -5,8 +5,7 @@ Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@lists.alioth.debian.
 Uploaders: Laurent Bigonville <bigon@debian.org>,
            Michael Biebl <biebl@debian.org>,
            Thomas Bechtold <toabctl@debian.org>
-Build-Depends: cdbs (>= 0.4.90~),
-               debhelper (>= 9),
+Build-Depends: debhelper (>= 9),
                dh-autoreconf,
                dh-python,
                gnome-common,

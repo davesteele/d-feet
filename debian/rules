@@ -1,16 +1,7 @@
 #!/usr/bin/make -f
 
-include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/class/python-autotools.mk
-include /usr/share/cdbs/1/rules/autoreconf.mk
+%:
+	dh $@ --with autoreconf,python2
 
-DEB_PYTHON2_MODULE_PACKAGES := d-feet
-
-DEB_MAKE_CHECK_TARGET =
-
-build/d-feet::
+override_dh_auto_test:
 	HOME=$(CURDIR) xvfb-run $(MAKE) check
-
-
-binary-install/d-feet::
-	dh_icons -pd-feet
