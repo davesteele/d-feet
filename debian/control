@@ -31,8 +31,7 @@ Depends: ${shlibs:Depends},
          ${python3:Depends},
          python3-gi (>= 3.3.91),
          gir1.2-gtk-3.0 (>= 3.6),
-         gir1.2-glib-2.0,
-         hicolor-icon-theme
+         gir1.2-glib-2.0
 Description: D-Bus object browser, viewer and debugger
  d-feet is a D-Bus debugger that allow you to:
   * View names on the session and system bus
