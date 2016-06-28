@@ -1,2 +1,3 @@
 Disable-dbus-tests.patch
 Hard-code-python-interpreter-path.patch
+fix_tests_python3.patch
