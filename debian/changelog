@@ -2,8 +2,9 @@ d-feet (0.3.11-2) UNRELEASED; urgency=medium
 
   * Switch to python3
   * debian/control: Drop direct dependency to hicolor-icon-theme
+  * debian/rules: Enable verbose tests
 
- -- Laurent Bigonville <bigon@debian.org>  Tue, 28 Jun 2016 11:08:43 +0200
+ -- Laurent Bigonville <bigon@debian.org>  Tue, 28 Jun 2016 11:22:47 +0200
 
 d-feet (0.3.11-1) unstable; urgency=medium
 
