@@ -1,3 +1,9 @@
+d-feet (0.3.11-3) UNRELEASED; urgency=medium
+
+  * Fix PEP8 305 style error. (Closes: #844533)
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 01 Dec 2016 18:31:37 +0100
+
 d-feet (0.3.11-2) unstable; urgency=medium
 
   * Switch to python3

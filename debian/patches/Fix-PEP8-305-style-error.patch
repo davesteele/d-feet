@@ -1,0 +1,25 @@
+From: Michael Biebl <biebl@debian.org>
+Date: Thu, 1 Dec 2016 18:27:08 +0100
+Subject: Fix PEP8 305 style error
+
+Fixes
+src/tests/tests.py:105:1: E305 expected 2 blank lines after class or function definition, found 1
+
+Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=844533
+Bug: https://bugzilla.gnome.org/show_bug.cgi?id=774735
+---
+ src/tests/tests.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/tests/tests.py b/src/tests/tests.py
+index 0d6b2f9..301573b 100755
+--- a/src/tests/tests.py
++++ b/src/tests/tests.py
+@@ -102,6 +102,7 @@ class AddressInfoTest(unittest.TestCase):
+         # (see http://developer.gnome.org/gio/unstable/GDBusServer.html#gdbus-peer-to-peer)
+         pass
+ 
++
+ if __name__ == "__main__":
+     # run tests
+     unittest.main()
