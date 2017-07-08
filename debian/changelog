@@ -1,4 +1,4 @@
-d-feet (0.3.12-1) UNRELEASED; urgency=medium
+d-feet (0.3.12-1) unstable; urgency=medium
 
   * New upstream release
   * debian/patches/: Instead of patching minor formatting errors, ignore
@@ -14,7 +14,7 @@ d-feet (0.3.12-1) UNRELEASED; urgency=medium
     - Do not explicitly run dh-autoreconf, it is now the default
   * Add myself to Uploaders
 
- -- Simon McVittie <smcv@debian.org>  Sat, 08 Jul 2017 18:10:22 +0100
+ -- Simon McVittie <smcv@debian.org>  Sat, 08 Jul 2017 21:27:29 +0100
 
 d-feet (0.3.11-3) unstable; urgency=medium
 
