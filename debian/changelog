@@ -10,6 +10,8 @@ d-feet (0.3.12-1) UNRELEASED; urgency=medium
     Add patch from upstream Bugzilla to display zero/empty/false
     property values (upstream bug GNOME#783006)
   * Standards-Version: 4.0.0 (no further changes)
+  * Upgrade to debhelper 10 compatibility level
+    - Do not explicitly run dh-autoreconf, it is now the default
 
  -- Simon McVittie <smcv@debian.org>  Sat, 08 Jul 2017 18:10:22 +0100
 

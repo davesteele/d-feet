@@ -5,8 +5,7 @@ Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@lists.alioth.debian.
 Uploaders: Laurent Bigonville <bigon@debian.org>,
            Michael Biebl <biebl@debian.org>,
            Thomas Bechtold <toabctl@debian.org>
-Build-Depends: debhelper (>= 9),
-               dh-autoreconf,
+Build-Depends: debhelper (>= 10),
                dh-python,
                gnome-common,
                gobject-introspection (>= 1.31.6),

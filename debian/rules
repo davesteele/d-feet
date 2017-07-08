@@ -3,7 +3,7 @@
 export PYTHON=/usr/bin/python3
 
 %:
-	dh $@ --with autoreconf,python3
+	dh $@ --with python3
 
 override_dh_auto_test:
 	VERBOSE=1 HOME=$(CURDIR) xvfb-run $(MAKE) check
