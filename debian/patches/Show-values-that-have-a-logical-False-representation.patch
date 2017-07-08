@@ -1,0 +1,25 @@
+From: Benjamin Berg <bberg@redhat.com>
+Date: Tue, 23 May 2017 18:55:24 +0200
+Subject: Show values that have a logical False representation.
+
+Correctly test whether a value has been retrieved (not None) instead of
+testing whether the value is logically True to decide on showing it.
+
+Bug: https://bugzilla.gnome.org/show_bug.cgi?id=783006
+---
+ src/dfeet/introspection_helper.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/dfeet/introspection_helper.py b/src/dfeet/introspection_helper.py
+index 348b772..68e3cd6 100644
+--- a/src/dfeet/introspection_helper.py
++++ b/src/dfeet/introspection_helper.py
+@@ -86,7 +86,7 @@ class DBusProperty(DBusInterface):
+         s = "%s %s <small>(%s)</small>" % (
+             args_signature_markup(sig),
+             args_name_markup(self.property_info.name), " / ".join(readwrite))
+-        if self.value:
++        if self.value is not None:
+             s += " = %s" % (self.value,)
+         return s
+ 

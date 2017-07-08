@@ -2,4 +2,5 @@ Disable-dbus-tests.patch
 Hard-code-python-interpreter-path.patch
 fix_tests_python3.patch
 ExecuteMethodDialog-Pretty-print-multiple-results.patch
+Show-values-that-have-a-logical-False-representation.patch
 debian/tests-Ignore-result-of-PEP8-formatting-check.patch
