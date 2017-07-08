@@ -251,7 +251,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 HELP_ID = d-feet
-HELP_LINGUAS = cs de el es sv
+HELP_LINGUAS = cs de el es pl sv
 HELP_MEDIA = \
 	figures/icon.png
 

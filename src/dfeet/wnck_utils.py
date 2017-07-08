@@ -3,9 +3,18 @@
 # icon information. If the wnck module is not installed we fallback to default
 # behvior
 
-from gi.repository import Gtk
+import gi
+from gi.repository import Gtk, Gdk, GLib
+
+
+def running_in_x11():
+    display = Gdk.Display.get_default()
+    return display.__gtype__.name == 'GdkX11Display'
 
 try:
+    if not running_in_x11():
+        raise GLib.Error('Wnck is only meant to be used with X11')
+    gi.require_version('Wnck', '3.0')
     from gi.repository import Wnck
     has_libwnck = True
 except:
@@ -24,19 +33,17 @@ class IconTable(object):
 
         if has_libwnck:
             screen = Wnck.Screen.get_default()
-            # screen is None under Wayland
-            if screen is not None:
-                Wnck.Screen.force_update(screen)
-                screen.connect('application_opened', self.on_app_open)
-                screen.connect('application_closed', self.on_app_close)
+            Wnck.Screen.force_update(screen)
+            screen.connect('application_opened', self.on_app_open)
+            screen.connect('application_closed', self.on_app_close)
 
-                for w in screen.get_windows():
-                    app = w.get_application()
-                    pid = app.get_pid()
-                    icon = app.get_mini_icon()
+            for w in screen.get_windows():
+                app = w.get_application()
+                pid = app.get_pid()
+                icon = app.get_mini_icon()
 
-                    if pid not in self.app_map.keys():
-                        self.app_map[pid] = icon
+                if pid not in self.app_map.keys():
+                    self.app_map[pid] = icon
 
     def on_app_open(self, screen, app):
         icon = app.get_mini_icon()
