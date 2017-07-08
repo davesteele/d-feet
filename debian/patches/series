@@ -1,4 +1,5 @@
 Disable-dbus-tests.patch
 Hard-code-python-interpreter-path.patch
 fix_tests_python3.patch
+ExecuteMethodDialog-Pretty-print-multiple-results.patch
 debian/tests-Ignore-result-of-PEP8-formatting-check.patch
