@@ -4,6 +4,7 @@ Priority: extra
 Maintainer: Utopia Maintenance Team <pkg-utopia-maintainers@lists.alioth.debian.org>
 Uploaders: Laurent Bigonville <bigon@debian.org>,
            Michael Biebl <biebl@debian.org>,
+           Simon McVittie <smcv@debian.org>,
            Thomas Bechtold <toabctl@debian.org>
 Build-Depends: debhelper (>= 10),
                dh-python,
