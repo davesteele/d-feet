@@ -1,0 +1,23 @@
+From: Simon McVittie <smcv@debian.org>
+Date: Sat, 8 Jul 2017 18:13:25 +0100
+Subject: tests: Ignore result of PEP8 formatting check
+
+Upstream want the source code to have PEP8-compliant formatting,
+and in an upstream project that's fine, but in a downstream
+distribution we really don't want new pep8 versions to break the build.
+
+Forwarded: no, Debian-specific
+---
+ src/tests/Makefile.am | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/tests/Makefile.am b/src/tests/Makefile.am
+index d8c2f03..86dbb46 100644
+--- a/src/tests/Makefile.am
++++ b/src/tests/Makefile.am
+@@ -9,4 +9,4 @@ EXTRA_DIST = tests.py
+ PEP8_EXCLUDES=--exclude='.svn,CVS,.bzr,.hg,.git,__pycache__,.\#*'
+ 
+ check-local:
+-	pep8 --max-line-length=99 --ignore=E123,E402 $(PEP8_EXCLUDES) $(top_srcdir)/src/
++	-pep8 --max-line-length=99 --ignore=E123,E402 $(PEP8_EXCLUDES) $(top_srcdir)/src/

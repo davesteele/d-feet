@@ -1,6 +1,8 @@
 d-feet (0.3.12-1) UNRELEASED; urgency=medium
 
   * New upstream release
+  * debian/patches/: Instead of patching minor formatting errors, ignore
+    the result of the PEP8 check. (Closes: #866556)
 
  -- Simon McVittie <smcv@debian.org>  Sat, 08 Jul 2017 18:10:22 +0100
 
