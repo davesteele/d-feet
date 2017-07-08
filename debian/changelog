@@ -9,6 +9,7 @@ d-feet (0.3.12-1) UNRELEASED; urgency=medium
   * d/p/Show-values-that-have-a-logical-False-representation.patch:
     Add patch from upstream Bugzilla to display zero/empty/false
     property values (upstream bug GNOME#783006)
+  * Standards-Version: 4.0.0 (no further changes)
 
  -- Simon McVittie <smcv@debian.org>  Sat, 08 Jul 2017 18:10:22 +0100
 
