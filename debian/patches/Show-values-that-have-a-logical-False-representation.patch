@@ -6,6 +6,7 @@ Correctly test whether a value has been retrieved (not None) instead of
 testing whether the value is logically True to decide on showing it.
 
 Bug: https://bugzilla.gnome.org/show_bug.cgi?id=783006
+Applied-upstream: 0.3.13, commit:cf4d19881505c130e4a96e3126a534f9cd384380
 ---
  src/dfeet/introspection_helper.py | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)

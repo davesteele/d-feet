@@ -5,6 +5,8 @@ Subject: Hard-code python interpreter path.
 @PYTHON@ is not necessarily set to the full path but can contain only
 the binary name, which breaks the shebang.
 So hard-code the path instead.
+
+Forwarded: no
 ---
  src/d-feet.in | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)

@@ -3,6 +3,8 @@ Date: Sat, 25 May 2013 08:35:01 +0200
 Subject: Disable dbus tests
 
 Disable tests which need systembus and sessionbus
+
+Forwarded: no
 ---
  src/tests/tests.py | 6 +++---
  1 file changed, 3 insertions(+), 3 deletions(-)

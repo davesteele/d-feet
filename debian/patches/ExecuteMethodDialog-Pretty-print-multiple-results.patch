@@ -12,6 +12,7 @@ return signature 'isa{sv}' might end up showing:
 
 Signed-off-by: Simon McVittie <smcv@collabora.com>
 Bug: https://bugzilla.gnome.org/show_bug.cgi?id=784387
+Forwarded: yes
 ---
  src/dfeet/executemethoddialog.py | 3 ++-
  1 file changed, 2 insertions(+), 1 deletion(-)

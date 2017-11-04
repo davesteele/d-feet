@@ -2,6 +2,7 @@ From: Laurent Bigonville <bigon@debian.org>
 Date: Tue, 28 Jun 2016 13:29:24 +0200
 Subject: Run the tests with python3
 
+Forwarded: no
 ---
  src/tests/tests.py | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
