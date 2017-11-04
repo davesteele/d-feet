@@ -18,7 +18,7 @@ Build-Depends: debhelper (>= 10),
                python3-gi (>= 3.3.91),
                xvfb,
                xauth
-Standards-Version: 4.0.0
+Standards-Version: 4.1.1
 X-Python3-Version: >= 3.2
 Vcs-Git: https://anonscm.debian.org/git/pkg-utopia/d-feet.git
 Vcs-Browser: https://anonscm.debian.org/cgit/pkg-utopia/d-feet.git
