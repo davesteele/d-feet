@@ -9,6 +9,8 @@ d-feet (0.3.12-2) UNRELEASED; urgency=medium
     d/p/build-Stop-using-GNOME_COMPILE_WARNINGS.patch:
     Add patches to stop using gnome-common
     - d/control: Stop depending on gnome-common (Closes: #829972)
+    - d/control: Depend on intltool so we can re-intltoolize, instead of
+      relying on upstream's aclocal.m4
     - d/rules: Run autogen.sh instead of autoreconf, to get the intltool
       macros
 
