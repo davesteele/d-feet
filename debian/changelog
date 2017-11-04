@@ -4,6 +4,13 @@ d-feet (0.3.12-2) UNRELEASED; urgency=medium
   * Standards-Version: 4.1.1 (no further changes)
   * Set Rules-Requires-Root to no
   * Mark patches with their forwarding status
+  * d/p/build-Put-third-party-macros-in-m4.patch,
+    d/p/build-Replace-deprecated-use-of-gnome-autogen.sh-with-rec.patch,
+    d/p/build-Stop-using-GNOME_COMPILE_WARNINGS.patch:
+    Add patches to stop using gnome-common
+    - d/control: Stop depending on gnome-common (Closes: #829972)
+    - d/rules: Run autogen.sh instead of autoreconf, to get the intltool
+      macros
 
  -- Simon McVittie <smcv@debian.org>  Sat, 04 Nov 2017 14:37:11 +0000
 
