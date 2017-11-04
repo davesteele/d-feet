@@ -1,0 +1,9 @@
+usr/bin
+usr/lib
+usr/share/appdata/d-feet.appdata.xml usr/share/metainfo
+usr/share/applications
+usr/share/d-feet
+usr/share/glib-2.0/schemas
+usr/share/help
+usr/share/icons
+usr/share/locale
