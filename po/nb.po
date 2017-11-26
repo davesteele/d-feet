@@ -1,24 +1,21 @@
-# Danish translation of gnome-chat
-# Copyright (C) 2014 gnome-chat developers
-# This file is distributed under the same license as the gnome-chat package.
+# Norwegian Bokmål translation for d-feet.
+# Copyright (C) 2017 d-feet's COPYRIGHT HOLDER
+# This file is distributed under the same license as the d-feet package.
+# Kjartan Maraas <kmaraas@gnome.org>, 2017.
 #
-# Klaus Rasmussen <claudius@gmx.co.uk>, 2014.
-# Alan Mortensen <alanmortensen.am@gmail.com>, 2016.
 msgid ""
 msgstr ""
-"Project-Id-Version: d-feet\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=d-"
-"feet&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-03-05 20:00+0000\n"
-"PO-Revision-Date: 2016-11-08 17:29+0100\n"
-"Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
-"Language-Team: dansk <dansk@dansk-gruppen.dk>\n"
-"Language: da\n"
+"Project-Id-Version: d-feet master\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=d-feet&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-11-11 17:48+0000\n"
+"PO-Revision-Date: 2017-11-19 16:18+0100\n"
+"Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
+"Language-Team: Norwegian Bokmål <nb@li.org>\n"
+"Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.7.1\n"
 
 #: ../data/d-feet.appdata.xml.in.h:1 ../data/d-feet.desktop.in.in.h:1
 msgid "D-Feet"
@@ -26,7 +23,7 @@ msgstr "D-Feet"
 
 #: ../data/d-feet.appdata.xml.in.h:2 ../data/d-feet.desktop.in.in.h:3
 msgid "Debug D-Bus applications"
-msgstr "Fejlsøg D-Bus-programmer"
+msgstr "Feilsøk D-Bus-programmer"
 
 #: ../data/d-feet.appdata.xml.in.h:3
 msgid ""
@@ -34,25 +31,22 @@ msgid ""
 "be used to inspect D-Bus interfaces of running programs and invoke methods "
 "on those interfaces."
 msgstr ""
-"Et simpelt program til fejlsøgning af meddelelsesbussystemet D-Bus. D-Feet "
-"kan bruges til inspicere D-Bus grænseflader af kørende programmer og kalde "
-"metoder hos disse grænseflader."
 
 #: ../data/d-feet.desktop.in.in.h:2
 msgid "D-Bus Debugger"
-msgstr "D-Bus-fejlsøger"
+msgstr ""
 
 #: ../data/d-feet.desktop.in.in.h:4
 msgid "debug;d-bus;dbus;dfeet;"
-msgstr "fejlsøg;d-bus;dbus;dfeet;"
+msgstr "feilsøk;d-bus;dbus;dfeet;"
 
 #: ../data/ui/addconnectiondialog.ui.h:1
 msgid "Add a Connection"
-msgstr "Tilføj en forbindelse"
+msgstr "Legg til en tilkobling"
 
 #: ../data/ui/addconnectiondialog.ui.h:2
 msgid "See http://dbus.freedesktop.org/doc/dbus-specification.html#addresses"
-msgstr "Se http://dbus.freedesktop.org/doc/dbus-specification.html#addresses"
+msgstr ""
 
 #: ../data/ui/addconnectiondialog.ui.h:3 ../data/ui/introspection.ui.h:3
 msgid "Address:"
@@ -64,19 +58,19 @@ msgstr "Om"
 
 #: ../data/ui/app-menu.ui.h:2
 msgid "Help"
-msgstr "Hjælp"
+msgstr "Hjelp"
 
 #: ../data/ui/app-menu.ui.h:3
 msgid "Quit"
-msgstr "Afslut"
+msgstr "Avslutt"
 
 #: ../data/ui/executedialog.ui.h:1
 msgid "Execute D-Bus Method"
-msgstr "Kald D-Bus-metode"
+msgstr ""
 
 #: ../data/ui/executedialog.ui.h:2
 msgid "_Execute"
-msgstr "_Kald"
+msgstr "K_jør"
 
 #: ../data/ui/executedialog.ui.h:3
 msgid "Method name:"
@@ -84,23 +78,23 @@ msgstr "Metodenavn:"
 
 #: ../data/ui/executedialog.ui.h:4
 msgid "Object Path:"
-msgstr "Objektsti:"
+msgstr ""
 
 #: ../data/ui/executedialog.ui.h:5
 msgid "Interface:"
-msgstr "Grænseflade:"
+msgstr "Grensesnitt"
 
 #: ../data/ui/executedialog.ui.h:6
 msgid "Method input"
-msgstr "Metodeinddata"
+msgstr ""
 
 #: ../data/ui/executedialog.ui.h:7
 msgid "Method output"
-msgstr "Metodeuddata"
+msgstr ""
 
 #: ../data/ui/executedialog.ui.h:8
 msgid "Pretty print"
-msgstr "læsevenlig udskrift"
+msgstr ""
 
 #: ../data/ui/executedialog.ui.h:9
 msgid "Source"
@@ -108,42 +102,39 @@ msgstr "Kilde"
 
 #: ../data/ui/executedialog.ui.h:10
 msgid "Method execution"
-msgstr "Metodeudførsel"
+msgstr ""
 
 #: ../data/ui/executedialog.ui.h:11
 msgid "Number of method executions"
-msgstr "Antal metodeudførsler"
+msgstr ""
 
-# Noter:
-# Tilføj note
-# forslag: tom
 #: ../data/ui/executedialog.ui.h:12
 msgid "Ø:"
 msgstr "Ø:"
 
 #: ../data/ui/executedialog.ui.h:13
 msgid "Average method execution time in seconds"
-msgstr "Gennemsnitlig metodeudførselstid i sekunder"
+msgstr ""
 
 #: ../data/ui/executedialog.ui.h:14
 msgid "Min:"
-msgstr "Minimum:"
+msgstr ""
 
 #: ../data/ui/executedialog.ui.h:15
 msgid "Minimal method execution time in seconds"
-msgstr "Mindste metodeudførselstid i sekunder"
+msgstr ""
 
 #: ../data/ui/executedialog.ui.h:16
 msgid "Max:"
-msgstr "Maximum:"
+msgstr "Maks"
 
 #: ../data/ui/executedialog.ui.h:17
 msgid "Maximal method execution time in seconds"
-msgstr "Maximale metodeudførselstid i sekunder"
+msgstr ""
 
 #: ../data/ui/introspection.ui.h:1
 msgid "Unique name:"
-msgstr "Éntydigt navn:"
+msgstr "Unikt navn:"
 
 #: ../data/ui/introspection.ui.h:2
 msgid "Name:"
@@ -151,24 +142,24 @@ msgstr "Navn:"
 
 #: ../data/ui/introspection.ui.h:4
 msgid "Introspecting..."
-msgstr "Undersøger egentilstand …"
+msgstr ""
 
 #: ../data/ui/introspection.ui.h:5
 msgid "Object path"
-msgstr "Objektsti"
+msgstr ""
 
 #: ../data/ui/mainwindow.ui.h:1
 msgid "Connect to System Bus"
-msgstr "Forbind til systembus"
+msgstr "Koble til systembussen"
 
 #: ../data/ui/mainwindow.ui.h:2
 msgid "Connect to Session Bus"
-msgstr "Forbind til sessionsbus"
+msgstr "Koble til øktbussen"
 
 #: ../data/ui/mainwindow.ui.h:3
 msgid "Connect to other Bus"
-msgstr "Forbind til anden bus"
+msgstr "Koble til andre busser"
 
 #: ../data/ui/mainwindow.ui.h:4
 msgid "Close Bus"
-msgstr "Luk bus"
+msgstr "Lukk buss"

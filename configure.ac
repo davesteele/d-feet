@@ -1,17 +1,17 @@
 AC_PREREQ([2.64])
 AC_INIT([d-feet],
-	[0.3.12],
+	[0.3.13],
 	[http://bugzilla.gnome.org/enter_bug.cgi?product=d-feet],
         [d-feet],
         [https://wiki.gnome.org/Apps/DFeet])
+AC_CONFIG_AUX_DIR([build-aux])
+AC_CONFIG_MACRO_DIR([m4])
 
 AM_INIT_AUTOMAKE([1.11 -Wall foreign no-define tar-ustar no-dist-gzip dist-xz])
 
 GLIB_GSETTINGS
 
 PKG_PROG_PKG_CONFIG
-
-GNOME_COMPILE_WARNINGS([maximum])
 
 YELP_HELP_INIT
 
