@@ -12,7 +12,7 @@ Forwarded: no
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/src/d-feet.in b/src/d-feet.in
-index d5e7d5b..1b4f1b0 100644
+index 55e3c53..2f1666e 100644
 --- a/src/d-feet.in
 +++ b/src/d-feet.in
 @@ -1,4 +1,4 @@

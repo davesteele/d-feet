@@ -1,9 +1,4 @@
 Disable-dbus-tests.patch
 Hard-code-python-interpreter-path.patch
 fix_tests_python3.patch
-ExecuteMethodDialog-Pretty-print-multiple-results.patch
-Show-values-that-have-a-logical-False-representation.patch
-build-Put-third-party-macros-in-m4.patch
-build-Replace-deprecated-use-of-gnome-autogen.sh-with-rec.patch
-build-Stop-using-GNOME_COMPILE_WARNINGS.patch
 debian/tests-Ignore-result-of-PEP8-formatting-check.patch

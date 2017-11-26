@@ -8,7 +8,7 @@ Forwarded: no
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/src/tests/tests.py b/src/tests/tests.py
-index 1fb5359..0d6b2f9 100755
+index 093f4f8..301573b 100755
 --- a/src/tests/tests.py
 +++ b/src/tests/tests.py
 @@ -1,4 +1,4 @@
