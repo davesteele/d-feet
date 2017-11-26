@@ -1,8 +1,12 @@
-d-feet (0.3.13-1) UNRELEASED; urgency=medium
+d-feet (0.3.13-1) unstable; urgency=medium
 
   * New upstream version 0.3.13
+  * Rebase patches
+  * Drop Hard-code-python-interpreter-path.patch.
+    This is no longer necessary as we now set PYTHON to a full path via
+    debian/rules.
 
- -- Michael Biebl <biebl@debian.org>  Sun, 26 Nov 2017 14:52:21 +0100
+ -- Michael Biebl <biebl@debian.org>  Sun, 26 Nov 2017 15:06:12 +0100
 
 d-feet (0.3.12-2) unstable; urgency=medium
 
