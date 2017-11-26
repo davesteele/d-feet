@@ -7,7 +7,8 @@ from dfeet.uiloader import UILoader
 
 
 class ExecuteMethodDialog:
-    def __init__(self, data_dir, connection, connection_is_bus, bus_name, method_obj):
+    def __init__(self, data_dir, connection, connection_is_bus, bus_name,
+                 method_obj, parent_window):
         signal_dict = {
             'execute_dbus_method_cb': self.execute_cb,
             'execute_dialog_close_cb': self.close_cb
@@ -20,6 +21,7 @@ class ExecuteMethodDialog:
 
         ui = UILoader(data_dir, UILoader.UI_EXECUTEDIALOG)
         self.dialog = ui.get_root_widget()
+        self.dialog.set_transient_for(parent_window)
         self.label_method_name = ui.get_widget('label_method_name')
         self.label_object_path = ui.get_widget('label_object_path')
         self.label_interface = ui.get_widget('label_interface')
@@ -108,7 +110,8 @@ class ExecuteMethodDialog:
             # output result
             if result:
                 self.source_textview.get_buffer().set_text(str(result))
-                self.prettyprint_textview.get_buffer().set_text(pformat(result.unpack()[0]))
+                lines = [pformat(x) for x in result.unpack()]
+                self.prettyprint_textview.get_buffer().set_text(',\n'.join(lines))
             else:
                 self.prettyprint_textview.get_buffer().set_text(
                     'This method did not return anything')
