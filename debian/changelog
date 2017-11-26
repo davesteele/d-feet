@@ -1,3 +1,9 @@
+d-feet (0.3.13-1) UNRELEASED; urgency=medium
+
+  * New upstream version 0.3.13
+
+ -- Michael Biebl <biebl@debian.org>  Sun, 26 Nov 2017 14:52:21 +0100
+
 d-feet (0.3.12-2) unstable; urgency=medium
 
   * Set Priority to optional
