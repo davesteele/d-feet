@@ -1,10 +1,10 @@
-d-feet (0.3.13-2) UNRELEASED; urgency=medium
+d-feet (0.3.13-2) unstable; urgency=medium
 
   * Remove Thomas Bechtold from Uploaders (Closes: #892670)
   * d/gbp.conf: Configure for DEP-14 branch names
   * Standards-Version: 4.1.3 (no changes required)
 
- -- Simon McVittie <smcv@debian.org>  Sun, 11 Mar 2018 22:41:03 +0000
+ -- Simon McVittie <smcv@debian.org>  Mon, 12 Mar 2018 08:31:30 +0000
 
 d-feet (0.3.13-1) unstable; urgency=medium
 
