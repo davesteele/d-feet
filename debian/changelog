@@ -1,6 +1,7 @@
 d-feet (0.3.13-3) UNRELEASED; urgency=medium
 
   * d/control: Switch Vcs-* for migration to salsa.debian.org
+  * Standards-Version: 4.1.4 (no changes required)
 
  -- Simon McVittie <smcv@debian.org>  Mon, 12 Mar 2018 22:58:07 +0000
 
