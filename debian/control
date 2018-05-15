@@ -19,7 +19,6 @@ Build-Depends: debhelper (>= 10),
                xauth
 Rules-Requires-Root: no
 Standards-Version: 4.1.4
-X-Python3-Version: >= 3.2
 Vcs-Git: https://salsa.debian.org/utopia-team/d-feet.git
 Vcs-Browser: https://salsa.debian.org/utopia-team/d-feet
 Homepage: https://wiki.gnome.org/Apps/DFeet
