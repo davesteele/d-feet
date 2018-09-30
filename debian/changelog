@@ -2,6 +2,7 @@ d-feet (0.3.13-4) UNRELEASED; urgency=medium
 
   * Remove X-Python3-Version: >= 3.2. There is no supported Debian
     release with a python3 version that old.
+  * Standards-Version: 4.2.1 (no changes required)
 
  -- Simon McVittie <smcv@debian.org>  Tue, 15 May 2018 11:24:35 +0100
 
