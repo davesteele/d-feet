@@ -12,12 +12,13 @@ Forwarded: no, Debian-specific
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/src/tests/Makefile.am b/src/tests/Makefile.am
-index d8c2f03..86dbb46 100644
+index d641dc7..a4bf64b 100644
 --- a/src/tests/Makefile.am
 +++ b/src/tests/Makefile.am
-@@ -9,4 +9,4 @@ EXTRA_DIST = tests.py
- PEP8_EXCLUDES=--exclude='.svn,CVS,.bzr,.hg,.git,__pycache__,.\#*'
+@@ -13,5 +13,5 @@ tests.py: tests.py.in
+ PYCODESTYLE_EXCLUDES=--exclude='.svn,CVS,.bzr,.hg,.git,__pycache__,.\#*'
  
  check-local:
--	pep8 --max-line-length=99 --ignore=E123,E402 $(PEP8_EXCLUDES) $(top_srcdir)/src/
-+	-pep8 --max-line-length=99 --ignore=E123,E402 $(PEP8_EXCLUDES) $(top_srcdir)/src/
+-	$(PYCODESTYLE) --max-line-length=99 --ignore=E123,E402,W504 \
++	-$(PYCODESTYLE) --max-line-length=99 --ignore=E123,E402,W504 \
+ 		$(PYCODESTYLE_EXCLUDES) $(top_srcdir)/src/

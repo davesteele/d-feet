@@ -6,14 +6,14 @@ Disable tests which need systembus and sessionbus
 
 Forwarded: no
 ---
- src/tests/tests.py | 6 +++---
+ src/tests/tests.py.in | 6 +++---
  1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/src/tests/tests.py b/src/tests/tests.py
-index 4fb52d5..093f4f8 100755
---- a/src/tests/tests.py
-+++ b/src/tests/tests.py
-@@ -91,9 +91,9 @@ class AddressInfoTest(unittest.TestCase):
+diff --git a/src/tests/tests.py.in b/src/tests/tests.py.in
+index 93cef12..659be07 100755
+--- a/src/tests/tests.py.in
++++ b/src/tests/tests.py.in
+@@ -94,9 +94,9 @@ class AddressInfoTest(unittest.TestCase):
      def tearDown(self):
          self.bus.stop()
  
