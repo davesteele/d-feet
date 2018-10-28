@@ -27,7 +27,6 @@ from dfeet.bus_watch import BusWatch
 from dfeet.settings import Settings
 from dfeet.uiloader import UILoader
 from dfeet.addconnectiondialog import AddConnectionDialog
-from dfeet.executemethoddialog import ExecuteMethodDialog
 
 
 class DFeetWindow(Gtk.ApplicationWindow):
@@ -35,9 +34,8 @@ class DFeetWindow(Gtk.ApplicationWindow):
 
     HISTORY_MAX_SIZE = 10
 
-    def __init__(self, app, package, version, data_dir):
+    def __init__(self, app, version, data_dir):
         Gtk.Window.__init__(self, application=app)
-        self.package = package
         self.version = version
         self.data_dir = data_dir
         self.session_bus = None
@@ -45,7 +43,7 @@ class DFeetWindow(Gtk.ApplicationWindow):
 
         # setup the window
         self.set_default_size(600, 480)
-        self.set_icon_name(package)
+        self.set_icon_name(app.props.application_id)
 
         # create actions
         action = Gio.SimpleAction.new('connect-system-bus', None)

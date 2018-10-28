@@ -1,6 +1,6 @@
 AC_PREREQ([2.64])
 AC_INIT([d-feet],
-	[0.3.13],
+	[0.3.14],
 	[http://bugzilla.gnome.org/enter_bug.cgi?product=d-feet],
         [d-feet],
         [https://wiki.gnome.org/Apps/DFeet])
@@ -27,8 +27,8 @@ AC_ARG_ENABLE(tests,
     enable_tests=$enableval, enable_tests=yes)
 
 if test x$enable_tests = xyes; then
-  AC_CHECK_PROG([PEP8], [pep8], [yes])
-  test -z "$PEP8" && AC_MSG_ERROR([pep8 binary not found but needed for testsuite. either install it or run with the argument --disable-tests to not run the testsuite.])
+  AC_CHECK_PROGS([PYCODESTYLE], [pycodestyle-3 pycodestyle pep8], [yes])
+  test -z "$PYCODESTYLE" && AC_MSG_ERROR([pycodestyle binary not found but needed for testsuite. either install it or run with the argument --disable-tests to not run the testsuite.])
 fi
 AM_CONDITIONAL(ENABLE_TESTS, test "x$enable_tests" = "xyes")
 
@@ -48,7 +48,7 @@ AC_CONFIG_FILES([
 	src/dfeet/Makefile
 	src/tests/Makefile
 	data/Makefile
-	data/d-feet.desktop.in
+	data/org.gnome.dfeet.desktop.in
 	data/icons/Makefile
 	data/ui/Makefile
 	help/Makefile

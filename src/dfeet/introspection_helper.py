@@ -9,7 +9,7 @@ def args_signature_markup(arg_signature):
 
 
 def args_name_markup(arg_name):
-    return '<small><span foreground="#000000">%s</span></small>' % (arg_name)
+    return '<small>%s</small>' % (arg_name,)
 
 
 class DBusNode(GObject.GObject):
