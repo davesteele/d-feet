@@ -1,10 +1,14 @@
-d-feet (0.3.13-4) UNRELEASED; urgency=medium
+d-feet (0.3.14-1) UNRELEASED; urgency=medium
 
+  [ Simon McVittie ]
   * Remove X-Python3-Version: >= 3.2. There is no supported Debian
     release with a python3 version that old.
   * Standards-Version: 4.2.1 (no changes required)
 
- -- Simon McVittie <smcv@debian.org>  Tue, 15 May 2018 11:24:35 +0100
+  [ Michael Biebl ]
+  * New upstream version 0.3.14
+
+ -- Michael Biebl <biebl@debian.org>  Sun, 28 Oct 2018 19:16:28 +0100
 
 d-feet (0.3.13-3) unstable; urgency=medium
 
