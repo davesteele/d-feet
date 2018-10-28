@@ -1,4 +1,4 @@
-d-feet (0.3.14-1) UNRELEASED; urgency=medium
+d-feet (0.3.14-1) unstable; urgency=medium
 
   [ Simon McVittie ]
   * Remove X-Python3-Version: >= 3.2. There is no supported Debian
@@ -7,8 +7,10 @@ d-feet (0.3.14-1) UNRELEASED; urgency=medium
 
   [ Michael Biebl ]
   * New upstream version 0.3.14
+  * Rebase patches
+  * Stop fixing install location of AppData files
 
- -- Michael Biebl <biebl@debian.org>  Sun, 28 Oct 2018 19:16:28 +0100
+ -- Michael Biebl <biebl@debian.org>  Sun, 28 Oct 2018 19:37:52 +0100
 
 d-feet (0.3.13-3) unstable; urgency=medium
 
