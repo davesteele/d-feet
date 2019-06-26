@@ -4,6 +4,7 @@ d-feet (0.3.14-2) UNRELEASED; urgency=medium
   * d/rules: Use dh_auto_test, instead of using $(MAKE) check directly
   * d/rules: Don't run xvfb-run if DEB_BUILD_OPTIONS=nocheck
   * Standards-Version: 4.3.0 (no changes required)
+  * d/control, d/changelog: Remove trailing whitespace
 
  -- Simon McVittie <smcv@debian.org>  Mon, 24 Jun 2019 09:25:55 +0100
 
@@ -311,7 +312,7 @@ d-feet (0.1.10-3) unstable; urgency=low
 d-feet (0.1.10-2) unstable; urgency=low
 
   * Bump Standards-Version (no further change)
-  * Build-depend on python (>= 2.5) instead of python2.5. 
+  * Build-depend on python (>= 2.5) instead of python2.5.
   * Remove pyversions and pycompat files and use XS-Python-Version instead
   * Use new source package version '3.0 (quilt)'
   * debian/d-feet.1: Update my email address
@@ -345,7 +346,7 @@ d-feet (0.1.8-3) unstable; urgency=low
 
   * debian/control:
     - Fix Homepage URL (Closes: #506559)
-    - Drop python-gnome2-desktop to Recommends (Closes: #507442) 
+    - Drop python-gnome2-desktop to Recommends (Closes: #507442)
     - Change description to something more meaningful (Closes: #470701)
   * debian/rules: Remove rmdir rules, not needed anymore
 
@@ -355,7 +356,7 @@ d-feet (0.1.8-2) unstable; urgency=low
 
   * debian/control:
     - Bump minimal version for debhelper to please lintian
-    - Move python2.5 to Build-Depends to please lintian 
+    - Move python2.5 to Build-Depends to please lintian
     - Bump Standards-Version to 3.8.0
     - Use my debian.org address in Uploaders
   * debian/d-feet.1: add manpage for d-feet executable

@@ -36,4 +36,4 @@ Description: D-Bus object browser, viewer and debugger
   * View names on the session and system bus
   * View exported objects, interfaces, methods and signals
   * View the full command line of services on the bus
-  * Execute methods with parameters on the bus and see their return values 
+  * Execute methods with parameters on the bus and see their return values
