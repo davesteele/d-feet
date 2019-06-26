@@ -6,6 +6,7 @@ d-feet (0.3.14-2) UNRELEASED; urgency=medium
   * Standards-Version: 4.3.0 (no changes required)
   * d/control, d/changelog: Remove trailing whitespace
   * d/control: Don't build-depend on xauth, xvfb if not running tests
+  * Use debhelper-compat 12
 
  -- Simon McVittie <smcv@debian.org>  Mon, 24 Jun 2019 09:25:55 +0100
 
