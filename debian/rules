@@ -9,7 +9,9 @@ override_dh_autoreconf:
 	NOCONFIGURE=1 dh_autoreconf ./autogen.sh --
 
 override_dh_auto_test:
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 	VERBOSE=1 HOME=$(CURDIR) xvfb-run dh_auto_test
+endif
 
 override_dh_auto_install:
 	dh_auto_install --destdir=debian/tmp
