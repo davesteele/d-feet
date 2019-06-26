@@ -5,6 +5,7 @@ d-feet (0.3.14-2) UNRELEASED; urgency=medium
   * d/rules: Don't run xvfb-run if DEB_BUILD_OPTIONS=nocheck
   * Standards-Version: 4.3.0 (no changes required)
   * d/control, d/changelog: Remove trailing whitespace
+  * d/control: Don't build-depend on xauth, xvfb if not running tests
 
  -- Simon McVittie <smcv@debian.org>  Mon, 24 Jun 2019 09:25:55 +0100
 
