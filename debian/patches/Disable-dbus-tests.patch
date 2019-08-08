@@ -4,25 +4,22 @@ Subject: Disable dbus tests
 
 Disable tests which need systembus and sessionbus
 
+[smcv: Skip them instead of commenting them out]
+
 Forwarded: no
 ---
- src/tests/tests.py.in | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ src/tests/tests.py.in | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/src/tests/tests.py.in b/src/tests/tests.py.in
-index 93cef12..659be07 100755
+index de40cf3..a2accc6 100755
 --- a/src/tests/tests.py.in
 +++ b/src/tests/tests.py.in
-@@ -94,9 +94,9 @@ class AddressInfoTest(unittest.TestCase):
+@@ -96,6 +96,7 @@ class AddressInfoTest(unittest.TestCase):
      def tearDown(self):
          self.bus.stop()
  
--    def test_bus(self):
--        """introspect a name on the system bus"""
--        ai = AddressInfo(DATA_DIR, self.bus.get_bus_address(), None, "org.freedesktop.DBus")
-+    # def test_bus(self):
-+    #    """introspect a name on the system bus"""
-+    #    ai = AddressInfo(DATA_DIR, self.bus.get_bus_address(), None, "org.freedesktop.DBus")
- 
-     @unittest.skip("TODO:peer to peer test not implemented")
-     def test_peer_to_peer(self):
++    @unittest.skip("System bus is not available on Debian buildds")
+     def test_bus(self):
+         """introspect a name on the system bus"""
+         ai = AddressInfo(DATA_DIR, self.bus.get_bus_address(), None, "org.freedesktop.DBus")
