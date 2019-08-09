@@ -1,4 +1,4 @@
-d-feet (0.3.15-1) UNRELEASED; urgency=medium
+d-feet (0.3.15-1) unstable; urgency=medium
 
   * New upstream release
     - Build with Meson
@@ -11,7 +11,7 @@ d-feet (0.3.15-1) UNRELEASED; urgency=medium
   * Use debhelper-compat 12
   * Standards-Version: 4.4.0 (no changes required)
 
- -- Simon McVittie <smcv@debian.org>  Mon, 24 Jun 2019 09:25:55 +0100
+ -- Simon McVittie <smcv@debian.org>  Fri, 09 Aug 2019 12:49:44 +0100
 
 d-feet (0.3.14-1) unstable; urgency=medium
 
