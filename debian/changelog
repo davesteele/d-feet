@@ -4,6 +4,7 @@ d-feet (0.3.15-2) UNRELEASED; urgency=medium
   * Build-depend on pycodestyle instead of the transitional pep8 package,
     which was recently removed. The upstream build system already
     prefers to use the pycodestyle name for the program. (Closes: #949938)
+  * Normalize order of dependencies (wrap-and-sort -abt)
 
  -- Simon McVittie <smcv@debian.org>  Tue, 01 Oct 2019 09:50:12 +0100
 
