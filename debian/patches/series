@@ -1,2 +1,3 @@
 Disable-dbus-tests.patch
 debian/tests-Ignore-result-of-PEP8-formatting-check.patch
+simple-sort.patch

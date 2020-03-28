@@ -1,0 +1,30 @@
+--- a/src/dfeet/introspection.py
++++ b/src/dfeet/introspection.py
+@@ -134,25 +134,11 @@
+                     childiter = model.iter_next(childiter)
+ 
+     def __sort_model(self, model, iter1, iter2, user_data):
+-        """objects with small path depth first"""
++        """simple sort"""
+         un1 = model.get_value(iter1, 0)
+         un2 = model.get_value(iter2, 0)
+ 
+-        if un1.startswith("/"):
+-            un1_depth = len(un1.split("/"))
+-        else:
+-            un1_depth = 1
+-        if un2.startswith("/"):
+-            un2_depth = len(un2.split("/"))
+-        else:
+-            un2_depth = 1
+-
+-        if un1_depth > un2_depth:
+-            return 1
+-        elif un1_depth < un2_depth:
+-            return -1
+-        else:
+-            return un1 > un2
++        return un1 > un2
+ 
+     def introspect_start(self):
+         """introspect the given bus name and update the tree model"""
