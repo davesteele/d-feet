@@ -1,6 +1,6 @@
 --- a/src/dfeet/introspection.py
 +++ b/src/dfeet/introspection.py
-@@ -134,25 +134,11 @@
+@@ -134,25 +134,25 @@
                      childiter = model.iter_next(childiter)
  
      def __sort_model(self, model, iter1, iter2, user_data):
@@ -24,6 +24,20 @@
 -            return -1
 -        else:
 -            return un1 > un2
++        sun1 = un1.split("/")
++        sun2 = un2.split("/")
++
++        while sun1[0] == sun2[0] and len(sun1) > 1 and len(sun2) > 1:
++            sun1 = sun1[1:]
++            sun2 = sun2[1:]
++
++        if sun1[0] == sun2[0]:
++            return len(sun1) > len(sun2)
++        elif sun2[0].startswith(sun1[0]):
++            return True
++        elif sun1[0].startswith(sun2[0]):
++            return False
++
 +        return un1 > un2
  
      def introspect_start(self):
