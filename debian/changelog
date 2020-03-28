@@ -1,3 +1,9 @@
+d-feet (0.3.15-2.tank) UNRELEASED; urgency=medium
+
+  * Different sort order for paths.
+
+ -- David Steele <steele@debian.org>  Fri, 27 Mar 2020 23:53:54 -0400
+
 d-feet (0.3.15-2) unstable; urgency=medium
 
   * Standards-Version: 4.5.0 (no changes required)
